@@ -9,22 +9,22 @@ class Community < ActiveRecord::Base
   )
 
   def user_count
-    communities = Community.all
-    communities.sort_by
 
+    # REFACTOR INTO ACTIVERECORD SYNTAX
 
-    # REFACTOR THIS INTO A SQL QUERY
-    # result = <<-SQL
+    # result = db.execute(<<-SQL)
     #   SELECT
-    #     *
+    #     communities.*, COUNT(memberships.id) AS memberships_count
     #   FROM
     #     communities
     #   JOIN
     #     memberships on communities.id = memberships.community_id
     #   GROUP BY
-    #     memberships.id
+    #     communities.id
     #   ORDER BY
-    #     COUNT(memberships)
+    #     memberships_count
     # SQL
+    #
+    # result
   end
 end
