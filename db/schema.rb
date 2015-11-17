@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117142718) do
+ActiveRecord::Schema.define(version: 20151117170523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "communities", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.text     "description", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "owner_id"
+  end
+
+  add_index "communities", ["name"], name: "index_communities_on_name", unique: true, using: :btree
+
+  create_table "memberships", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "member_id"
+    t.integer  "community_id"
+  end
+
+  add_index "memberships", ["community_id"], name: "index_memberships_on_community_id", using: :btree
+  add_index "memberships", ["member_id"], name: "index_memberships_on_member_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false

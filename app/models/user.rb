@@ -2,10 +2,20 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  validates :username, :password_digest, :session_token, presence: true
+  validates :username, :email, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :posts
+  has_many(
+    :memberships,
+    class_name: "Membership",
+    foreign_key: :member_id
+  )
+
+  has_many(
+    :communities,
+    through: :memberships,
+    source: :community
+  )
 
   attr_reader :password
 

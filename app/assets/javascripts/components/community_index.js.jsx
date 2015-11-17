@@ -1,0 +1,5 @@
+var CommunityIndex = React.createClass ({
+
+
+
+});

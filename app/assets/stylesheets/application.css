@@ -13,3 +13,65 @@
  *= require_tree .
  *= require_self
  */
+
+
+html, body, section, article,
+h1, h2, p, strong, em, a, ul, div {
+ margin: 0;
+ border: 0;
+ padding: 0;
+ outline: 0;
+ box-sizing: inherit;
+ font: inherit;
+ text-decoration: inherit;
+ text-align: inherit;
+ color: inherit;
+ background: transparent;
+}
+
+ul {
+ list-style: none;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.nav-container {
+  height: 34px;
+  background: #212223;
+}
+
+.nav {
+  width: 980px;
+  margin: 0 auto;
+  height: 34px;
+}
+
+.nav li {
+  float: left;
+  height: 24px;
+  padding-top: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
+  color: white;
+  font-size: 12px;
+}
+
+.nav li:hover {
+  background: #545454
+}
+
+.left-nav {
+  float: left;
+}
+
+.right-nav {
+  float: right;
+}
+
+.nav-options > li {
+  float: left
+}
