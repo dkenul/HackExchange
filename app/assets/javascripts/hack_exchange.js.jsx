@@ -17,7 +17,6 @@ $(function(){
 
   var routes = (
       <Route path="/" component={App}>
-        <IndexRoute component={CommunityIndex}/>
       </Route>
   );
 
