@@ -12,7 +12,7 @@
       _communities = communities;
     },
 
-    resetBench: function(community) {
+    resetCommunity: function(community) {
       var switched = false;
       _communities.forEach(function(c) {
         if (c.id === community.id) {

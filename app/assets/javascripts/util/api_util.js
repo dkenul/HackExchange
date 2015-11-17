@@ -4,8 +4,8 @@ window.ApiUtil = {
       url: 'api/communities',
       type: 'GET',
       dataType: 'json',
-      success: function(benches) {
-        ApiActions.receiveAll(benches);
+      success: function(communities) {
+        ApiActions.receiveAll(communities);
       }
     });
   },
