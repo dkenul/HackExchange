@@ -3,7 +3,8 @@ var Header = React.createClass ({
     return (
       <div className="header-container">
         <header className="header group">
-          HELLO FROM THE HEADER
+          <br/><br/>
+          <p>HELLO FROM THE HEADER</p>
         </header>
       </div>
     );
