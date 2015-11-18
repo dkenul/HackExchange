@@ -59,12 +59,25 @@ body {
 
 .nav li {
   float: left;
-  height: 24px;
-  padding-top: 10px;
+  height: 34px;
   padding-left: 7px;
   padding-right: 7px;
   color: white;
   font-size: 12px;
+}
+
+.right-nav li {
+  height: 24px;
+  padding-top: 10px;
+}
+
+.logo-icon {
+  height: 34px;
+}
+
+.mail-icon {
+  height: 50%;
+  padding-top: 10px;
 }
 
 .nav li:hover {
@@ -94,6 +107,7 @@ body {
   width: 980px;
   margin: 0 auto;
   height: 100px;
+  padding-left: 100px;
 }
 
 /* CONTENT */
@@ -105,6 +119,7 @@ body {
 .content-wrap {
   width: 980px;
   margin: 0 auto;
+  padding-left: 100px;
 }
 
   /* COMMUNITIES */
