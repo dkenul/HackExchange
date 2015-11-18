@@ -1,18 +1,18 @@
 var NavBar = React.createClass ({
   render: function() {
     return(
-      <header className="nav-container">
+      <div className="nav-container">
         <nav className="nav group">
           <ul className="left-nav group">
-            <li>HELLO FROM THE LOGO</li>
-            <li>mail</li>
+            <li>HackExchange</li>
+            <li>Mail</li>
           </ul>
           <ul className="right-nav group">
-            <li>Option1</li>
-            <li>Option2</li>
+            <li>Sign In</li>
+            <li>Sign Up</li>
           </ul>
         </nav>
-      </header>
+      </div>
     );
   }
 });

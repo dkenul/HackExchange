@@ -14,6 +14,7 @@
  *= require_self
  */
 
+/* SETUP */
 
 html, body, section, article,
 h1, h2, p, strong, em, a, ul, div {
@@ -21,15 +22,14 @@ h1, h2, p, strong, em, a, ul, div {
  border: 0;
  padding: 0;
  outline: 0;
+
  box-sizing: inherit;
  font: inherit;
  text-decoration: inherit;
  text-align: inherit;
  color: inherit;
- background: transparent;
-}
 
-ul {
+ background: transparent;
  list-style: none;
 }
 
@@ -39,8 +39,15 @@ ul {
   clear: both;
 }
 
+/* DEFAULT BACKGROUND */
+
+body {
+  background: lightgrey;
+}
+
+/* NAVIGATION */
+
 .nav-container {
-  height: 34px;
   background: #212223;
 }
 
@@ -61,7 +68,8 @@ ul {
 }
 
 .nav li:hover {
-  background: #545454
+  background: #545454;
+  cursor: pointer;
 }
 
 .left-nav {
@@ -74,4 +82,70 @@ ul {
 
 .nav-options > li {
   float: left
+}
+
+/* HEADER */
+
+.header-container {
+
+}
+
+.header {
+  width: 980px;
+  margin: 0 auto;
+  height: 100px;
+}
+
+/* CONTENT */
+.content-container {
+  background: #fdfdfd;
+  box-shadow: 0 0px 10px rgba(0,0,0,0.5);
+}
+
+.content-wrap {
+  width: 980px;
+  margin: 0 auto;
+}
+
+  /* COMMUNITIES */
+
+  .community-tile-container {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    float: left;
+  }
+
+  .community-tile {
+    width: 100px;
+    height: 100px;
+
+    background: grey;
+    border-radius: 20px;
+  }
+
+/* FOOTER */
+
+.footer-container {
+
+}
+
+.footer {
+  padding-top: 10px;
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* DELETE FOR TESTING ONLY */
+
+.content-container li {
+  background: lightblue;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.content-container li:hover {
+  background: white;
+  cursor: pointer;
 }

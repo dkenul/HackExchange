@@ -9,14 +9,22 @@ $(function(){
       return (
           <div>
             <NavBar />
-            {this.props.children}
+            <Header />
+            <div className="content-container">
+              <div className="content-wrap">
+                {this.props.children}
+                </div>
+            </div>
+            <Footer />
           </div>
       );
     }
   });
 
   var routes = (
-      <Route path="/" component={App}>
+      <Route path="/" components={App}>
+        <IndexRoute component={PseudoHome} />
+        <Route path="communities" component={CommunityIndex} />
       </Route>
   );
 

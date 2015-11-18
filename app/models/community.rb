@@ -8,23 +8,17 @@ class Community < ActiveRecord::Base
     source: :member
   )
 
-  def user_count
+  def self.all_by_popularity
+    Community
+      .select('communities.*, COUNT(memberships.id) as memberships_count')
+      .joins(:memberships)
+      .group('communities.id')
+      .order('memberships_count DESC')
+  end
 
-    # REFACTOR INTO ACTIVERECORD SYNTAX
-
-    # result = db.execute(<<-SQL)
-    #   SELECT
-    #     communities.*, COUNT(memberships.id) AS memberships_count
-    #   FROM
-    #     communities
-    #   JOIN
-    #     memberships on communities.id = memberships.community_id
-    #   GROUP BY
-    #     communities.id
-    #   ORDER BY
-    #     memberships_count
-    # SQL
-    #
-    # result
+  def self.all_by_name
+    Community
+      .select('*')
+      .order('communities.name')
   end
 end

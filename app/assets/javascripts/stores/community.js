@@ -8,7 +8,7 @@
       return _communities.slice(0);
     },
 
-    resetCommunities: function(community) {
+    resetCommunities: function(communities) {
       _communities = communities;
     },
 
@@ -32,6 +32,7 @@
     },
 
     dispatcherID: AppDispatcher.register(function(payload){
+
       switch (payload.actionType) {
         case CommunityConstants.COMMUNITIES_RECEIVED:
           CommunityStore.resetCommunities(payload.communities);
