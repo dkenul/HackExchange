@@ -33,6 +33,10 @@ h1, h2, p, strong, em, a, ul, div {
  list-style: none;
 }
 
+img {
+  display: block;
+}
+
 .group:after {
   content: "";
   display: block;
@@ -58,17 +62,18 @@ body {
 }
 
 .nav li {
+  position: relative;
   float: left;
   height: 34px;
-  padding-left: 7px;
-  padding-right: 7px;
-  color: white;
-  font-size: 12px;
 }
 
 .right-nav li {
   height: 24px;
   padding-top: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
+  color: white;
+  font-size: 12px;
 }
 
 .logo-icon {
@@ -84,6 +89,50 @@ body {
   background: #545454;
   cursor: pointer;
 }
+
+  /* LOGO DROPDOWN COMPONENT */
+
+  .nav li.clicked {
+    background: #f0f0f0;
+  }
+
+  .logo-dropdown {
+    position: absolute;
+    height: 390px;
+    width: 375px;
+    background: white;
+    cursor: default;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.5);
+    overflow: auto;
+  }
+
+  .logo-dropdown header {
+    height: 25px;
+    background: #f0f0f0;
+  }
+
+  .logo-dropdown header h2 {
+    font-size: 0.8em;
+    padding-left: 7px;
+    padding-top: 5px;
+    font-family: helvetica;
+    color: #666;
+    font-weight: bold;
+  }
+
+  .logo-dropdown p {
+    padding-left: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .blueline {
+    border-left: #2f96e8 2px solid;
+  }
+
+  .logo-dropdown p:hover {
+    background: #e0e4eb;
+  }
 
 .left-nav {
   float: left;
