@@ -1,5 +1,7 @@
 class Question < ActiveRecord::Base
 
+  include Commentable
+
   belongs_to :membership
 
   has_one(
