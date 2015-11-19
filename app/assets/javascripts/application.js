@@ -17,5 +17,6 @@
 //= require ReactRouter.min
 //= require flux
 //= require eventemitter
+//= require masonry.pkgd.min
 //= require components
 //= require_tree .

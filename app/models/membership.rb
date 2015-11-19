@@ -8,4 +8,6 @@ class Membership < ActiveRecord::Base
 
   belongs_to :community
 
+  has_many :questions
+
 end

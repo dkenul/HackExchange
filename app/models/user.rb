@@ -17,6 +17,13 @@ class User < ActiveRecord::Base
     source: :community
   )
 
+  has_many(
+    :questions,
+    through: :memberships,
+    source: :questions
+  )
+
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)

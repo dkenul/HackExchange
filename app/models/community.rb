@@ -8,6 +8,12 @@ class Community < ActiveRecord::Base
     source: :member
   )
 
+  has_many(
+    :questions,
+    through: :memberships,
+    source: :questions
+  )
+
   def self.all_by_popularity
     Community
       .select('communities.*, COUNT(memberships.id) as memberships_count')

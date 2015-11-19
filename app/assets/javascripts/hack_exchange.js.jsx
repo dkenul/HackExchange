@@ -11,7 +11,7 @@ $(function(){
             <NavBar />
             <Header />
             <div className="content-container">
-              <div className="content-wrap">
+              <div className="content-wrap group">
                 {this.props.children}
                 </div>
             </div>
