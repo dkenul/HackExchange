@@ -23,6 +23,12 @@ class User < ActiveRecord::Base
     source: :questions
   )
 
+  has_many(
+    :answers,
+    class_name: "Answer",
+    foreign_key: :author_id
+  )
+
 
   attr_reader :password
 
