@@ -5,6 +5,8 @@ $(function(){
   var Route = ReactRouter.Route;
   var IndexRoute = ReactRouter.IndexRoute;
   var App = React.createClass({
+    mixins: [ReactRouter.History],
+
     render: function(){
       return (
           <div>

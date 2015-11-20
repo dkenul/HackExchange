@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
 
-  def new
-  end
-
   def create
     user = User.find_by_credentials(
       params[:user][:username],
@@ -11,10 +8,10 @@ class SessionsController < ApplicationController
 
     if user
       login(user)
-      redirect_to root_url
+      render 'api/communities/index'
     else
-      flash.now[:errors] = ["Invalid username or password"]
-      render :new
+      render json: {errors: ["Nope"]}, status: 401
+      render 'api/communities/index'
     end
   end
 
