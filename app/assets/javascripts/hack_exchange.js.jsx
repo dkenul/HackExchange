@@ -7,14 +7,36 @@ $(function(){
   var App = React.createClass({
     mixins: [ReactRouter.History],
 
+    getInitialState: function() {
+      // CommunityStore.meta();
+      return { currentCommunity: "meta" };
+    },
+
+    updateCurrentCommunity: function(communityId) {
+      var community = communityId;
+      this.setState({ currentCommunity: community});
+    },
+
+    renderChildren: function() {
+      return React.Children.map(this.props.children, function(child) {
+
+        return React.addons.cloneWithProps(child, {
+
+          updateCurrentCommunity: this.updateCurrentCommunity
+        });
+      }.bind(this));
+    },
+
     render: function(){
+      var modifiedChildren = this.renderChildren();
+
       return (
-          <div>
+          <div key={this.state.currentCommunity}>
             <NavBar />
-            <Header />
+            <Header currentCommunity={this.state.currentCommunity} />
             <div className="content-container">
               <div className="content-wrap group">
-                {this.props.children}
+                {modifiedChildren}
                 </div>
             </div>
             <Footer />
@@ -27,6 +49,7 @@ $(function(){
       <Route path="/" components={App}>
         <IndexRoute component={PseudoHome} />
         <Route path="communities" component={CommunityIndex} />
+        <Route path="communities/:community_id" component={CommunityShow} />
       </Route>
   );
 

@@ -6,7 +6,6 @@
       e.preventDefault();
 
       var credentials = $(e.currentTarget).serializeJSON();
-        debugger;
       SessionsApiUtil.login(credentials, function () {
         // this.history.pushState(null, "/users");
       }.bind(this));

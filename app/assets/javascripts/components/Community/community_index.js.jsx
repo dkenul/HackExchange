@@ -18,6 +18,7 @@ var CommunityIndex = React.createClass ({
   },
 
   render: function() {
+    debugger;
     var communities = this.state.communities.map(function(community) {
       return (
         <div className="community-tile-container" key={community.id}>
