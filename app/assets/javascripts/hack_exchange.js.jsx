@@ -31,7 +31,7 @@ $(function(){
       var modifiedChildren = this.renderChildren();
 
       return (
-          <div key={this.state.currentCommunity}>
+          <div>
             <NavBar />
             <Header currentCommunity={this.state.currentCommunity} />
             <div className="content-container">

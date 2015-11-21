@@ -1,4 +1,4 @@
-Queclass Comment < ActiveRecord::Base
+class Comment < ActiveRecord::Base
   belongs_to :commentable, polymorphic: true
 
   belongs_to(

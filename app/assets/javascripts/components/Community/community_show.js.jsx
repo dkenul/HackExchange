@@ -6,8 +6,7 @@ var CommunityShow = React.createClass ({
   },
 
   componentWillReceiveProps: function() {
-    // debugger;
-    // this.props.updateCurrentCommunity(this.props.params.community_id);
+    this.props.updateCurrentCommunity(this.props.params.community_id);
   },
 
   render: function() {
