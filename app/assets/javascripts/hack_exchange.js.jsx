@@ -17,18 +17,15 @@ $(function(){
       this.setState({ currentCommunity: community});
     },
 
-    renderChildren: function() {
-      return React.Children.map(this.props.children, function(child) {
-
-        return React.addons.cloneWithProps(child, {
-
-          updateCurrentCommunity: this.updateCurrentCommunity
-        });
-      }.bind(this));
+    componentWillReceiveProps: function(nextProps) {
+      if (nextProps.params.community_id) {
+        this.setState({currentCommunity: nextProps.params.community_id});
+      } else {
+        this.setState({currentCommunity: "meta"});
+      }
     },
 
     render: function(){
-      var modifiedChildren = this.renderChildren();
 
       return (
           <div>
@@ -36,7 +33,7 @@ $(function(){
             <Header currentCommunity={this.state.currentCommunity} />
             <div className="content-container">
               <div className="content-wrap group">
-                {modifiedChildren}
+                {this.props.children}
                 </div>
             </div>
             <Footer />
