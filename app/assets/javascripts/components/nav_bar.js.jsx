@@ -57,7 +57,7 @@ var NavBar = React.createClass ({
             onClick={this.handleLoginClick}>
             Sign In
           </li>
-            {this.state.loginClicked ? loginInjection : ""}
+          {this.state.loginClicked ? loginInjection : ""}
           <li>Sign Up</li>
         </ul>;
     } else {

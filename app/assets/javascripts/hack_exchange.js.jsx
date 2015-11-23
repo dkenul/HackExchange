@@ -8,7 +8,6 @@ $(function(){
     mixins: [ReactRouter.History],
 
     getInitialState: function() {
-      // CommunityStore.meta();
       return { currentCommunity: "meta" };
     },
 
@@ -29,7 +28,7 @@ $(function(){
 
       return (
           <div>
-            <NavBar />
+            <NavBar key={this.state.currentCommunity}/>
             <Header communityId={this.state.currentCommunity} />
             <div className="content-container">
               <div className="content-wrap group">
@@ -46,7 +45,8 @@ $(function(){
       <Route path="/" components={App}>
         <IndexRoute component={PseudoHome} />
         <Route path="communities" component={CommunityIndex} />
-        <Route path="communities/:community_id" component={CommunityShow} />
+        <Route path=":community_name/:community_id" component={CommunityShow} />
+
       </Route>
   );
 

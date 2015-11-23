@@ -15,7 +15,7 @@
         }
       }
 
-      return null
+      return null;
     },
 
     resetCommunities: function(communities) {

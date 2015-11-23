@@ -62,8 +62,12 @@ body {
   height: 34px;
 }
 
+.nav span {
+  display: none;
+}
+
 .nav li {
-  position: relative;
+  display: block;
   float: left;
   height: 34px;
 }
@@ -74,7 +78,6 @@ body {
 }
 
 .right-nav li {
-  position: relative;
   height: 24px;
   padding-top: 10px;
   padding-left: 7px;
@@ -290,6 +293,7 @@ body {
   width: 980px;
   margin: 0 auto;
   padding-left: 10px;
+  min-height: 800px;
 }
 
   /* COMMUNITIES */
