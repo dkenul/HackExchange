@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
 /* SETUP */
 
 html, body, section, article,
@@ -298,11 +299,19 @@ body {
 
   /* COMMUNITIES */
 
+  .communities {
+    padding: 10px 0;
+  }
+
   .community-tile-container {
     width: 100px;
     height: 100px;
-    margin: 10px;
-    float: left;
+    margin-bottom: 10px;
+  }
+
+  .tile-12 {
+    width: 210px;
+    height: 210px;
   }
 
   .community-tile {

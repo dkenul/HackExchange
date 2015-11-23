@@ -27,4 +27,8 @@ class Community < ActiveRecord::Base
       .select('*')
       .order('communities.name')
   end
+
+  def popularity
+    self.members.count + self.questions.count
+  end
 end

@@ -18,14 +18,9 @@ var CommunityIndex = React.createClass ({
   },
 
   render: function() {
-    var communities = this.state.communities.map(function(community) {
+    var communities = this.state.communities.map(function(community, i) {
       return (
-        <div className="community-tile-container" key={community.id}>
-          <div className="community-tile">
-            <div className="community-name">{community.name}</div>
-            <div className="community-description">{community.description}</div>
-          </div>
-        </div>
+          <CommunityIndexItem community={community} klass={i}/>
       );
     });
 
