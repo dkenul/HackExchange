@@ -8,7 +8,6 @@ var PseudoHome = React.createClass ({
   render: function () {
     return(
       <div>
-        <li onClick={this.handleClick}>Click for COMMUNITIES</li>
         <p>HELLO FROM CONTENT</p>
         <br/>
         <p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p>

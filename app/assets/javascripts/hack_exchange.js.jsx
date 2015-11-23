@@ -30,7 +30,7 @@ $(function(){
       return (
           <div>
             <NavBar />
-            <Header currentCommunity={this.state.currentCommunity} />
+            <Header communityId={this.state.currentCommunity} />
             <div className="content-container">
               <div className="content-wrap group">
                 {this.props.children}

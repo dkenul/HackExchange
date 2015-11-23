@@ -8,6 +8,16 @@
       return _communities.slice(0);
     },
 
+    havingId: function(id) {
+      for (var i = 0; i < _communities.length; i++) {
+        if (_communities[i].id === id) {
+          return _communities[i];
+        }
+      }
+
+      return null
+    },
+
     resetCommunities: function(communities) {
       _communities = communities;
     },
@@ -32,7 +42,6 @@
     },
 
     dispatcherID: AppDispatcher.register(function(payload){
-
       switch (payload.actionType) {
         case CommunityConstants.COMMUNITIES_RECEIVED:
           CommunityStore.resetCommunities(payload.communities);

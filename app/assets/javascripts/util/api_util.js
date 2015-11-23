@@ -1,5 +1,6 @@
 window.ApiUtil = {
   fetchCommunities: function(){
+
     $.ajax({
       url: 'api/communities',
       type: 'GET',

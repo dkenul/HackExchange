@@ -22,9 +22,12 @@ var LogoDropdown = React.createClass ({
     var communities = this.state.communities.map(function(community) {
       return (
         <div className="community-item-container" key={community.id}>
-          <a href={"#/communities/" + community.id} className="community-item">
-            <div className="community-name">{community.name}</div>
-            <div className="community-description">{community.description}</div>
+          <a href={"#/communities/" + community.id} className="community-item group">
+            <img src="http://placecorgi.com/25/25" className="community-item-thumb" />
+            <div className="text-container">
+              <div className="community-name">{community.name}</div>
+              <div className="community-description">{community.description}</div>
+            </div>
           </a>
         </div>
       );
