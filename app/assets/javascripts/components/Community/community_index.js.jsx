@@ -1,7 +1,10 @@
 var CommunityIndex = React.createClass ({
 
   getInitialState: function() {
-    return {communities: CommunityStore.all()};
+    return {
+      communities: CommunityStore.all(),
+      clickedTile: -1
+    };
   },
 
   componentDidMount: function() {
@@ -17,15 +20,24 @@ var CommunityIndex = React.createClass ({
     this.setState({communities: CommunityStore.all()});
   },
 
+  handleClick: function(idx) {
+    this.setState({clickedTile: idx});
+  },
+
   render: function() {
     var communities = this.state.communities.map(function(community, i) {
       return (
-          <CommunityIndexItem community={community} klass={i}/>
+          <CommunityIndexItem
+            community={community}
+            idx={i}
+            clickedTile={this.state.clickedTile}
+            handleClick={this.handleClick}/>
       );
-    });
+    }.bind(this));
 
     return (
       <div className="communities group">
+        <div class="grid-sizer"></div>
         {communities}
       </div>
     );
