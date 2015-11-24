@@ -36,8 +36,7 @@ var CommunityIndex = React.createClass ({
     }.bind(this));
 
     return (
-      <div className="communities group">
-        <div class="grid-sizer"></div>
+      <div className="grid">
         {communities}
       </div>
     );
