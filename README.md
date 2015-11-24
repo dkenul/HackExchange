@@ -4,7 +4,7 @@ HackExchange is a web application inspired by [Stack Exchange][selink] built usi
 and React.js.
 
 [Heroku link][heroku]
-[heroku]: http://www.herokuapp.com
+[heroku]: http://hackexchange.herokuapp.com/
 [selink]: http://stackexchange.com/
 
 ## Currently Implemented Features
@@ -38,7 +38,7 @@ and React.js.
 - [ ] Community owner can customize background, header, font, etc
 - [ ] Badges
 - [ ] Meta sites (for discussing the current community's community)
-- [ ] Staging area for new Communities 
+- [ ] Staging area for new Communities
 
 ## Tech Specs
 
@@ -52,5 +52,13 @@ and React.js.
 ## Plugins
 
 * Isotope
+
+## Known Bugs or Poor Implementation
+
+* Sign in link in nav doesn't go anywhere. 
+* Mail link in nav doesn't go anywhere. Thumbnail doesn't fit and needs to be updated.
+* Logo dropdown and sign in dropdown don't close on many clicks one might want them to. Need to refactor.
+* Community show header nav options don't link anywhere. 
+* Community header shoud link to the community show page (will be more useful when question show is implemented)
 
 
