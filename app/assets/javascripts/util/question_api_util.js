@@ -1,4 +1,4 @@
-window.QuestionApiUtil = {
+var QuestionApiUtil = {
   fetchQuestions: function(){
     $.ajax({
       url: 'api/questions',

@@ -5,7 +5,8 @@ var NavBar = React.createClass ({
       currentUser: CurrentUserStore.currentUser(),
       community: CommunityStore.havingId(parseInt(this.props.communityId)),
       logoClicked: false,
-      loginClicked: false
+      loginClicked: false,
+      signUpClicked: false
     };
   },
 
@@ -22,20 +23,32 @@ var NavBar = React.createClass ({
   },
 
   handleLogoClick: function(event) {
-    this.setState({logoClicked: !this.state.logoClicked, loginClicked: false});
+    this.setState({
+      logoClicked: !this.state.logoClicked,
+      loginClicked: false,
+      signUpClicked: false
+    });
   },
 
   handleLoginClick: function(event) {
-    this.setState({loginClicked: !this.state.loginClicked, logoClicked: false});
+    this.setState({
+      logoClicked: false,
+      loginClicked: !this.state.loginClicked,
+      signUpClicked: false
+    });
+  },
+
+  handleSignUpClick: function() {
+    this.setState({
+      logoClicked: false,
+      loginClicked: false,
+      signUpClicked: !this.state.signUpClicked
+    });
   },
 
   logout: function() {
     SessionsApiUtil.logout();
     this.setState({logoClicked: false, loginClicked: false});
-  },
-
-  propagationCanceller: function(event) {
-
   },
 
   render: function() {
@@ -45,8 +58,13 @@ var NavBar = React.createClass ({
       </div>;
 
     var loginInjection =
-      <div className="login-dropdown" onClick={this.propagationCanceller}>
+      <div className="login-dropdown">
         <SessionForm />
+      </div>;
+
+    var signUpInjection =
+      <div className="signup-dropdown">
+        <NewUser />
       </div>;
 
     var rightNav;
@@ -60,7 +78,12 @@ var NavBar = React.createClass ({
             Sign In
           </li>
           {this.state.loginClicked ? loginInjection : ""}
-          <li>Sign Up</li>
+          <li
+            className={this.state.signUpClicked ? "clicked" : ""}
+            onClick={this.handleSignUpClick}>
+            Sign Up
+          </li>
+          {this.state.signUpClicked ? signUpInjection : ""}
         </ul>;
     } else {
       rightNav =

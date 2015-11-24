@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :communities, only: [:index, :create]
     resources :questions, only: [:index, :create, :show]
     resource :session, only: [:create, :destroy, :show]
+    resources :users, only: [:index, :create, :show]
   end
 
 

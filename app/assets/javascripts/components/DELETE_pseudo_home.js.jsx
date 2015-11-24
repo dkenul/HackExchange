@@ -10,7 +10,6 @@ var PseudoHome = React.createClass ({
       <div>
         <p>HELLO FROM CONTENT</p>
         <br/>
-        <p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p><p>The cake is a lie!</p>
       </div>
     );
   }
