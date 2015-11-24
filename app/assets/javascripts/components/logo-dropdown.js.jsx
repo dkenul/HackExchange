@@ -33,12 +33,23 @@ var LogoDropdown = React.createClass ({
       );
     });
 
+    var community = this.props.community;
+    var linkInsertion;
+    var textInsertion;
+    if (community) {
+      linkInsertion = "#/" + community.name + "/" + community.id;
+      textInsertion = community.name;
+    } else {
+      linkInsertion = "#";
+      textInsertion = "Meta";
+    }
+
     return (
       <div>
         <header><h2>Current Community</h2></header>
-        <div className="blueline"><p><a href="#">HackExchange Home</a></p>
-        <p>needs to be a sprite</p>
-        <p>so is this pink color :)</p><p>bla</p></div>
+        <div className="blueline">
+        <p><a href="#">HackExchange Home</a></p>
+        <p><a className="nested-1" href={linkInsertion}>{textInsertion}</a></p></div>
         <header><h2>Your Communities</h2></header>
         <div><p>bla</p><p>bla</p></div>
         <header><h2><a href="#/communities">All Communities</a></h2></header>

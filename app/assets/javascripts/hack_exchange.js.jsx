@@ -28,7 +28,7 @@ $(function(){
 
       return (
           <div>
-            <NavBar key={this.state.currentCommunity}/>
+            <NavBar communityId={this.state.currentCommunity} key={this.state.currentCommunity}/>
             <Header communityId={this.state.currentCommunity} />
             <div className="content-container">
               <div className="content-wrap group">

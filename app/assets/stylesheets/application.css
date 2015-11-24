@@ -88,8 +88,8 @@ body {
   font-weight: bold;
 }
 
-.logo-icon {
-
+.guest-login {
+  color: red;
 }
 
 .mail-icon {
@@ -140,6 +140,12 @@ body {
     padding-left: 7px;
     padding-top: 5px;
     padding-bottom: 5px;
+  }
+
+  .logo-dropdown .nested-1 {
+    display: block;
+    padding-left: 7px;
+    border-left: #2f96e8 2px solid;
   }
 
   .blueline {

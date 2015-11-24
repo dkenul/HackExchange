@@ -3,6 +3,7 @@ var NavBar = React.createClass ({
   getInitialState: function() {
     return {
       currentUser: CurrentUserStore.currentUser(),
+      community: CommunityStore.havingId(parseInt(this.props.communityId)),
       logoClicked: false,
       loginClicked: false
     };
@@ -40,7 +41,7 @@ var NavBar = React.createClass ({
   render: function() {
     var logoInjection =
       <div className="logo-dropdown" onClick={this.propagationCanceller}>
-        <LogoDropdown />
+        <LogoDropdown community={this.state.community} />
       </div>;
 
     var loginInjection =
@@ -52,6 +53,7 @@ var NavBar = React.createClass ({
     if (this.state.currentUser.username === undefined) {
         rightNav =
         <ul className="right-nav group">
+          <li><GuestSession /></li>
           <li
             className={this.state.loginClicked ? "clicked" : ""}
             onClick={this.handleLoginClick}>

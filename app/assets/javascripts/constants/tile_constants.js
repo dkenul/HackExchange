@@ -1,5 +1,4 @@
 TileConstants = {
-  SMALL_BOX: 5,
-  MEDIUM_BOX: 10,
-  LARGE_BOX: 15,
+  SMALL_BOX: 40,
+  MEDIUM_BOX: 75
 };
