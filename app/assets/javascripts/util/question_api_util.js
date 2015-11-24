@@ -5,7 +5,7 @@ var QuestionApiUtil = {
       type: 'GET',
       dataType: 'json',
       success: function(questions) {
-        ApiActions.receiveAll(questions);
+        QuestionApiActions.receiveAll(questions);
       }
     });
   },
@@ -17,7 +17,7 @@ var QuestionApiUtil = {
       dataType: 'json',
       data: {question: question},
       success: function (question) {
-        ApiActions.receiveSingleQuestion(question);
+        QuestionApiActions.receiveSingleQuestion(question);
         callback && callback(question.id);
       }
     });

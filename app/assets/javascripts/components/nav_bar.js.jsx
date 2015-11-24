@@ -18,6 +18,16 @@ var NavBar = React.createClass ({
     CurrentUserStore.removeChangeListener(this._onUserChange);
   },
 
+  componentWillReceiveProps: function(nextProps) {
+    if (nextProps.navReset) {
+      this.setState({
+        logoClicked: false,
+        loginClicked: false,
+        signUpClicked: false
+      });
+    }
+  },
+
   _onUserChange: function() {
     this.setState({currentUser: CurrentUserStore.currentUser()});
   },
@@ -51,6 +61,10 @@ var NavBar = React.createClass ({
     this.setState({logoClicked: false, loginClicked: false});
   },
 
+  propagationCanceller: function(e) {
+    e.stopPropagation();
+  },
+
   render: function() {
     var logoInjection =
       <div className="logo-dropdown" onClick={this.propagationCanceller}>
@@ -58,36 +72,38 @@ var NavBar = React.createClass ({
       </div>;
 
     var loginInjection =
-      <div className="login-dropdown">
+      <div className="login-dropdown" onClick={this.propagationCanceller}>
         <SessionForm />
       </div>;
 
     var signUpInjection =
-      <div className="signup-dropdown">
+      <div className="login-dropdown signup-dropdown" onClick={this.propagationCanceller}>
         <NewUser />
       </div>;
 
     var rightNav;
     if (this.state.currentUser.username === undefined) {
         rightNav =
-        <ul className="right-nav group">
-          <li><GuestSession /></li>
+        <ul className="right-nav group" onClick={this.propagationCanceller}>
+          <li className="guest-li"><GuestSession /></li>
           <li
             className={this.state.loginClicked ? "clicked" : ""}
             onClick={this.handleLoginClick}>
-            Sign In
+            <div>Sign In</div>
+            {this.state.loginClicked ? loginInjection : ""}
           </li>
-          {this.state.loginClicked ? loginInjection : ""}
+
           <li
             className={this.state.signUpClicked ? "clicked" : ""}
             onClick={this.handleSignUpClick}>
-            Sign Up
+            <div>Sign Up</div>
+            {this.state.signUpClicked ? signUpInjection : ""}
           </li>
-          {this.state.signUpClicked ? signUpInjection : ""}
+
         </ul>;
     } else {
       rightNav =
-      <ul className="right-nav group">
+      <ul className="right-nav group" onClick={this.propagationCanceller}>
         <li>{this.state.currentUser.username}</li>
         <li onClick={this.logout}>Sign Out</li>
       </ul>;
@@ -97,7 +113,7 @@ var NavBar = React.createClass ({
       <div className="nav-container">
         <nav className="nav group">
 
-          <ul className="left-nav group">
+          <ul className="left-nav group" onClick={this.propagationCanceller}>
             <li
               className={this.state.logoClicked ? "clicked" : ""}
               onClick={this.handleLogoClick}>

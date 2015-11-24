@@ -15,7 +15,7 @@
         }
       }
 
-      return null
+      return null;
     },
 
     resetQuestions: function(questions) {
@@ -42,15 +42,14 @@
     },
 
     dispatcherID: AppDispatcher.register(function(payload){
-
       switch (payload.actionType) {
-        case CommunityConstants.COMMUNITIES_RECEIVED:
-          CommunityStore.resetCommunities(payload.communities);
-          CommunityStore.emit(CHANGE_EVENT);
+        case QuestionConstants.QUESTIONS_RECEIVED:
+          QuestionStore.resetQuestions(payload.questions);
+          QuestionStore.emit(CHANGE_EVENT);
           break;
-        case CommunityConstants.COMMUNITY_RECEIVED:
-          CommunityStore.resetCommunity(payload.community);
-          CommunityStore.emit(CHANGE_EVENT);
+        case QuestionConstants.COMMUNITY_RECEIVED:
+          QuestionStore.resetCommunity(payload.question);
+          QuestionStore.emit(CHANGE_EVENT);
           break;
       }
     })

@@ -8,7 +8,10 @@ $(function(){
     mixins: [ReactRouter.History],
 
     getInitialState: function() {
-      return { currentCommunity: "meta" };
+      return {
+        currentCommunity: "meta",
+        navReset: false
+      };
     },
 
     updateCurrentCommunity: function(communityId) {
@@ -24,11 +27,15 @@ $(function(){
       }
     },
 
+    navReset: function() {
+      this.setState({navReset: true});
+    },
+
     render: function(){
 
       return (
-          <div>
-            <NavBar communityId={this.state.currentCommunity} key={this.state.currentCommunity}/>
+          <div onClick={this.navReset}>
+            <NavBar communityId={this.state.currentCommunity} key={this.state.currentCommunity} navReset={this.state.navReset}/>
             <Header communityId={this.state.currentCommunity} />
             <div className="content-container">
               <div className="content-wrap group">
@@ -43,7 +50,7 @@ $(function(){
 
   var routes = (
       <Route path="/" components={App}>
-        <IndexRoute component={PseudoHome} />
+        <IndexRoute component={HomePage} />
         <Route path="communities" component={CommunityIndex} />
         <Route path=":community_name/:community_id" component={CommunityShow} />
 

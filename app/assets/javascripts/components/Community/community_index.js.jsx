@@ -31,7 +31,8 @@ var CommunityIndex = React.createClass ({
             community={community}
             idx={i}
             clickedTile={this.state.clickedTile}
-            handleClick={this.handleClick}/>
+            handleClick={this.handleClick}
+            key={i}/>
       );
     }.bind(this));
 
