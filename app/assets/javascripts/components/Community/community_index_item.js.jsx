@@ -1,19 +1,24 @@
 var CommunityIndexItem = React.createClass ({
 
   componentDidMount: function() {
-    $('.grid').masonry({
+    $('.grid').isotope({
+      layoutMode: 'packery',
       itemSelector: '.grid-item',
-      columnWidth: 80,
-      gutterWidth: 10,
+      packery: {
+        gutter: 10
+      },
       isAnimated: true
     });
+
   },
 
   componentWillReceiveProps: function() {
-    $('.grid').masonry({
+    $('.grid').isotope({
+      layoutMode: 'packery',
       itemSelector: '.grid-item',
-      columnWidth: 80,
-      gutterWidth: 10,
+      packery: {
+        gutter: 10
+      },
       isAnimated: true
     });
   },
@@ -27,6 +32,7 @@ var CommunityIndexItem = React.createClass ({
     var popularity = this.props.popularity;
     var boxSize;
     var description;
+    var link;
     if (this.props.idx === this.props.clickedTile) {
       boxSize = "huge-box";
     } else if (community.popularity <= TileConstants.SMALL_BOX) {
@@ -39,6 +45,9 @@ var CommunityIndexItem = React.createClass ({
 
     if (boxSize === "huge-box") {
       description = <div className="community-description">{community.description}</div>;
+      link = <a
+        href={"#/" + community.name + "/" + community.id}
+        className="community-link">Visit Community</a>;
     }
 
 
@@ -49,6 +58,7 @@ var CommunityIndexItem = React.createClass ({
         <div className="community-tile">
           <div className="community-name">{community.name}</div>
           {description}
+          {link}
         </div>
       </div>
     );

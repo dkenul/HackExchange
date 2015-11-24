@@ -23,5 +23,7 @@
 //= require masonry/jquery.imagesloaded.min
 //= require masonry/jquery.infinitescroll.min
 //= require masonry/modernizr-transitions
+//= require isotope.pkgd.min
+//= require packery-mode.pkgd
 //= require components
 //= require_tree .
