@@ -1,16 +1,17 @@
 var QuestionApiUtil = {
-  fetchQuestions: function(){
+  fetchQuestions: function(page){
     $.ajax({
       url: 'api/questions',
       type: 'GET',
       dataType: 'json',
+      data: {page: page},
       success: function(questions) {
         QuestionApiActions.receiveAll(questions);
       }
     });
   },
 
-  createQuestion: function(community) {
+  createQuestion: function(question) {
     $.ajax({
       url: 'api/questions',
       type: 'POST',
