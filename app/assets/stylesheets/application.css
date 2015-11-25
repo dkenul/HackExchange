@@ -386,6 +386,22 @@ body {
     background: #eee;
   }
 
+  /* Question Show */
+
+  .main .title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .main .question {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+
 
 
   /* COMMUNITIES */

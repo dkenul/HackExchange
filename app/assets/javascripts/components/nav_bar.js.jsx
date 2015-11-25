@@ -113,9 +113,32 @@ var NavBar = React.createClass ({
 
         </ul>;
     } else {
+      var joinCommunityLi;
+      var profileLi;
+      if (this.props.communityId !== "meta") {
+        var isMember = false;
+        this.state.currentUser.communities.forEach(function(community) {
+          if (this.props.communityId == community.id) {
+            isMember = true;
+          }
+        }.bind(this));
+
+        if (isMember) {
+          profileLi = <li>Profile</li>;
+        } else {
+          joinCommunityLi = (
+            <li>Join Current Community</li>
+          );
+        }
+      } else {
+        profileLi = <li>{this.state.currentUser.username}</li>;
+      }
+
+
       rightNav =
       <ul className="right-nav group" onClick={this.propagationCanceller}>
-        <li>{this.state.currentUser.username}</li>
+        {joinCommunityLi}
+        {profileLi}
         <li onClick={this.logout}>Sign Out</li>
       </ul>;
     }
