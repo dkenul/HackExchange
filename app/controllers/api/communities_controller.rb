@@ -7,4 +7,8 @@ class Api::CommunitiesController < ApplicationController
     render 'index'
   end
 
+  def show
+    @community = Community.find_by_id(params[:id])
+
+  end
 end

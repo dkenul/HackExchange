@@ -47,8 +47,8 @@
           QuestionStore.resetQuestions(payload.questions);
           QuestionStore.emit(CHANGE_EVENT);
           break;
-        case QuestionConstants.COMMUNITY_RECEIVED:
-          QuestionStore.resetCommunity(payload.question);
+        case QuestionConstants.QUESTION_RECEIVED:
+          QuestionStore.resetQuestion(payload.question);
           QuestionStore.emit(CHANGE_EVENT);
           break;
       }

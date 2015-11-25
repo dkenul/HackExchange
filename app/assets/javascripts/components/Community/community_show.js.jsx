@@ -5,7 +5,11 @@ var CommunityShow = React.createClass ({
 
   componentDidMount: function() {
     CommunityStore.addChangeListener(this._onChange);
-    ApiUtil.fetchCommunities();
+    if (this.state.community) {
+      ApiUtil.fetchSingleCommunity(this.state.community.id);
+    } else {
+      ApiUtil.fetchSingleCommunity(this.props.params.community_id);
+    }
   },
 
   componentWillUnmount: function() {
@@ -16,13 +20,13 @@ var CommunityShow = React.createClass ({
     this.setState({community: CommunityStore.havingId(parseInt(this.props.params.community_id))});
   },
 
-  componentWillReceiveProps: function(nextProps) {
-    this.setState({community: CommunityStore.havingId(parseInt(nextProps.params.community_id))});
-  },
+  // componentWillReceiveProps: function(nextProps) {
+  //   this.setState({community: CommunityStore.havingId(parseInt(nextProps.params.community_id))});
+  // },
 
   render: function() {
     var questions;
-    if (this.state.community) {
+    if (this.state.community && this.state.community.questions) {
       questions = this.state.community.questions.map(function(question) {
         return <li key={question.id}>{question.title}</li>;
       });

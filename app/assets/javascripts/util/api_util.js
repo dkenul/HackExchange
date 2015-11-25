@@ -11,6 +11,17 @@ window.ApiUtil = {
     });
   },
 
+  fetchSingleCommunity: function(id) {
+    $.ajax({
+      url: 'api/communities/' + id,
+      type: 'GET',
+      dataType: 'json',
+      success: function(community) {
+        ApiActions.receiveSingleCommunity(community);
+      }
+    });
+  },
+
   createCommunity: function(community) {
     $.ajax({
       url: 'api/communities',
