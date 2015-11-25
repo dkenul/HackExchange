@@ -8,10 +8,9 @@ class SessionsController < ApplicationController
 
     if user
       login(user)
-      render 'api/communities/index'
+      render 'api/users/user'
     else
       render json: {errors: ["Nope"]}, status: 401
-      render 'api/communities/index'
     end
   end
 

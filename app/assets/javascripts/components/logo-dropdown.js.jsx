@@ -4,7 +4,7 @@ var LogoDropdown = React.createClass ({
     var communities = this.props.communities.map(function(community) {
       return (
         <div className="community-item-container" key={community.id}>
-          <a href={"#/" + community.id} className="community-item group">
+          <a href={"#/communities/" + community.id} className="community-item group">
             <img src="http://placebear.com/25/25" className="community-item-thumb" />
             <div className="text-container">
               <div className="community-name">{community.name}</div>
@@ -19,7 +19,7 @@ var LogoDropdown = React.createClass ({
     var linkInsertion;
     var textInsertion;
     if (community) {
-      linkInsertion = "#/" + community.name + "/" + community.id;
+      linkInsertion = "#/communities/" + community.id;
       textInsertion = community.name;
     } else {
       linkInsertion = "#";

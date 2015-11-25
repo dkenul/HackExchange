@@ -52,8 +52,8 @@ $(function(){
       <Route path="/" components={App}>
         <IndexRoute component={HomePage} />
         <Route path="communities" component={CommunityIndex} />
-        <Route path=":community_id" component={CommunityShow} />
-        <Route path=":community_id/:question_id" component={QuestionShow} />
+        <Route path="communities/:community_id" component={CommunityShow}/>
+        <Route path="communities/:community_id/questions/:question_id" component={QuestionShow} />
       </Route>
   );
 

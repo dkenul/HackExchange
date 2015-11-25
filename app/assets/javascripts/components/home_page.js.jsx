@@ -5,10 +5,6 @@ var HomePage = React.createClass ({
     return { currentPage: 1 };
   },
 
-  handleClick: function(event) {
-    this.history.pushState(null, "/communities");
-  },
-
   makePages: function(numPages) {
 
     var result = [];

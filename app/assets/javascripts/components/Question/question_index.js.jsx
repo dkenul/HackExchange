@@ -31,7 +31,7 @@ var QuestionIndex = React.createClass ({
     var questions = this.state.questions.map(function(question) {
       return  (
         <li key={question.id}>
-          <a href={"#/" + question.membership.community_id + "/" + question.id}>{question.title}</a>
+          <a href={"#/communities/" + question.membership.community_id + "/questions/" + question.id}>{question.title}</a>
         </li>
       );
     });

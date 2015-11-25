@@ -11,6 +11,17 @@ var QuestionApiUtil = {
     });
   },
 
+  fetchSingleQuestion: function(id) {
+    $.ajax({
+      url: 'api/questions/' + id,
+      type: 'GET',
+      dataType: 'json',
+      success: function(question) {
+        QuestionApiActions.receiveSingleQuestion(question);
+      }
+    });
+  },
+
   createQuestion: function(question) {
     $.ajax({
       url: 'api/questions',
