@@ -1,10 +1,10 @@
 var Header = React.createClass ({
   getInitialState: function() {
-    return { community: CommunityStore.havingId(parseInt(this.props.communityId)) };
+    return { community: NavStore.havingId(parseInt(this.props.communityId)) };
   },
 
   componentWillReceiveProps: function(nextProps) {
-    this.setState({community: CommunityStore.havingId(parseInt(nextProps.communityId))});
+    this.setState({community: NavStore.havingId(parseInt(nextProps.communityId))});
   },
 
   render: function() {

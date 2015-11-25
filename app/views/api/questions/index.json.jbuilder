@@ -1,1 +1,3 @@
-json.partial! 'api/questions/question', collection: @questions, as: :question
+json.array!(@questions) do |question|
+  json.partial!('question', question: question, show_full_data: false)
+end

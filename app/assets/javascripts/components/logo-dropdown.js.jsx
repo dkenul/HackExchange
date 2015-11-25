@@ -1,25 +1,7 @@
 var LogoDropdown = React.createClass ({
 
-  getInitialState: function() {
-    return { communities: CommunityStore.all()};
-  },
-
-  componentDidMount: function() {
-    CommunityStore.addChangeListener(this._onChange);
-    ApiUtil.fetchCommunities();
-  },
-
-  componentWillUnmount: function() {
-    CommunityStore.removeChangeListener(this._onChange);
-  },
-
-  _onChange: function() {
-    this.setState({communities: CommunityStore.all()});
-  },
-
   render: function() {
-
-    var communities = this.state.communities.map(function(community) {
+    var communities = this.props.communities.map(function(community) {
       return (
         <div className="community-item-container" key={community.id}>
           <a href={"#/" + community.name + "/" + community.id} className="community-item group">

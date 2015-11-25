@@ -20,9 +20,10 @@ var CommunityShow = React.createClass ({
     this.setState({community: CommunityStore.havingId(parseInt(this.props.params.community_id))});
   },
 
-  // componentWillReceiveProps: function(nextProps) {
-  //   this.setState({community: CommunityStore.havingId(parseInt(nextProps.params.community_id))});
-  // },
+  componentWillReceiveProps: function(nextProps) {
+    ApiUtil.fetchSingleCommunity(nextProps.params.community_id);
+    // this.setState({community: CommunityStore.havingId(parseInt(nextProps.params.community_id))});
+  },
 
   render: function() {
     var questions;

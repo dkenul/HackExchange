@@ -4,6 +4,7 @@ var NavBar = React.createClass ({
     return {
       currentUser: CurrentUserStore.currentUser(),
       community: CommunityStore.havingId(parseInt(this.props.communityId)),
+      communities: NavStore.all(),
       logoClicked: false,
       loginClicked: false,
       signUpClicked: false
@@ -12,10 +13,14 @@ var NavBar = React.createClass ({
 
   componentDidMount: function() {
     CurrentUserStore.addChangeListener(this._onUserChange);
+    NavStore.addChangeListener(this._onCommunitiesChange);
+
+    NavApiUtil.fetchCommunities();
   },
 
   componentWillUnmount: function() {
     CurrentUserStore.removeChangeListener(this._onUserChange);
+    NavStore.removeChangeListener(this._onCommunitiesChange);
   },
 
   componentWillReceiveProps: function(nextProps) {
@@ -32,7 +37,11 @@ var NavBar = React.createClass ({
     this.setState({currentUser: CurrentUserStore.currentUser()});
   },
 
-  handleLogoClick: function(event) {
+  _onCommunitiesChange: function() {
+    this.setState({communities: NavStore.all()});
+  },
+
+  handleLogoClick: function() {
     this.setState({
       logoClicked: !this.state.logoClicked,
       loginClicked: false,
@@ -40,7 +49,7 @@ var NavBar = React.createClass ({
     });
   },
 
-  handleLoginClick: function(event) {
+  handleLoginClick: function() {
     this.setState({
       logoClicked: false,
       loginClicked: !this.state.loginClicked,
@@ -68,7 +77,9 @@ var NavBar = React.createClass ({
   render: function() {
     var logoInjection =
       <div className="logo-dropdown" onClick={this.propagationCanceller}>
-        <LogoDropdown community={this.state.community} />
+        <LogoDropdown
+          communities={this.state.communities}
+          community={this.state.community} />
       </div>;
 
     var loginInjection =

@@ -1,8 +1,7 @@
 class Api::QuestionsController < ApplicationController
 
   def show
-
-    @question = Question.all
+    @question = Question.find_by_id(params[:id])
 
     render 'show'
   end
