@@ -22,7 +22,6 @@ var CommunityShow = React.createClass ({
 
   componentWillReceiveProps: function(nextProps) {
     ApiUtil.fetchSingleCommunity(nextProps.params.community_id);
-    // this.setState({community: CommunityStore.havingId(parseInt(nextProps.params.community_id))});
   },
 
   render: function() {

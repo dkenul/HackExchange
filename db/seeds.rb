@@ -45,9 +45,9 @@ questions = [
 
 
 20.times do |i|
-  User.create(username: "User#{i}", password: "hello6", email: "User#{i}@gmail")
-  Community.create(name: communities[i], description: "#{descriptions.sample} #{communities[i]}", owner_id: i)
-  Membership.create(member_id: i, community_id: i);
+  User.create(username: "User#{i+1}", password: "hello6", email: "User#{i+1}@gmail")
+  Community.create(name: communities[i], description: "#{descriptions.sample} #{communities[i+1]}", owner_id: i+1)
+  Membership.create(member_id: i+1, community_id: i+1);
 end
 
 50.times do

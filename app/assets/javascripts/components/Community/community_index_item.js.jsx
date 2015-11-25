@@ -46,7 +46,7 @@ var CommunityIndexItem = React.createClass ({
     if (boxSize === "huge-box") {
       description = <div className="community-description">{community.description}</div>;
       link = <a
-        href={"#/" + community.name + "/" + community.id}
+        href={"#/" + community.id}
         className="community-link">Visit Community</a>;
     }
 
