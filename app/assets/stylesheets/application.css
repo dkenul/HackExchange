@@ -371,14 +371,18 @@ body {
     float: left;
     border: 0;
     padding: 5px 10px;
-    margin: 5px 5px;
-    margin-top: 20px;
+    margin: 0 5px;
+    margin-bottom: 10px;
     background: orange;
     border-radius: 10px;
   }
 
   .pagination .page {
     cursor: pointer;
+  }
+
+  .pagination .page.clicked {
+    background: #eee;
   }
 
 

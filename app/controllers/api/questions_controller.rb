@@ -8,7 +8,6 @@ class Api::QuestionsController < ApplicationController
   end
 
   def index
-    byebug
     @questions = Question.page(params[:page])
 
     render 'index'
