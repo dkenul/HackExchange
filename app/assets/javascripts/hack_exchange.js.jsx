@@ -44,6 +44,14 @@ $(function(){
       this.setState({navReset: true});
     },
 
+    renderChildren: function () {
+      return React.Children.map(this.props.children, function (child) {
+        return React.addons.cloneWithProps(child, {
+          currentUser: this.state.currentUser
+        });
+      }.bind(this));
+    },
+
     render: function(){
 
       return (
@@ -52,7 +60,7 @@ $(function(){
             <Header communityId={this.state.currentCommunity} />
             <div className="content-container">
               <div className="content-wrap group">
-                {this.props.children}
+                {this.renderChildren()}
                 </div>
             </div>
             <Footer />

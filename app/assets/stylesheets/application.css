@@ -443,6 +443,13 @@ body {
     padding-left: 20px;
   }
 
+  .main .author-display {
+    display: block;
+    width: 150px;
+    background: #e0eaf1;
+    padding: 10px;
+  }
+
   .main .num-answers {
     padding-top: 20px;
     padding-bottom: 10px;

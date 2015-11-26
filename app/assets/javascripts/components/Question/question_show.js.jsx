@@ -1,23 +1,14 @@
 var QuestionShow = React.createClass ({
 
   getInitialState: function() {
-    debugger;
     return {
-      question: QuestionStore.havingId(parseInt(this.props.params.question_id)) || {title: "", description: ""},
-      currentUser: CurrentUserStore.currentUser()
+      question: QuestionStore.havingId(parseInt(this.props.params.question_id)) || {title: "", description: ""}
     };
   },
 
   componentDidMount: function() {
     QuestionStore.addChangeListener(this._onChange);
     QuestionApiUtil.fetchSingleQuestion(this.props.params.question_id);
-
-    tinymce.init({
-      selector:'textarea',
-      theme: 'modern',
-      plugins: "preview",
-      toolbar: "preview"
-    });
   },
 
   componentWillUnmount: function() {
@@ -28,33 +19,31 @@ var QuestionShow = React.createClass ({
     this.setState({question: QuestionStore.havingId(parseInt(this.props.params.question_id))});
   },
 
-  isMember: function() {
-
-    this.userIsMember = false;
-    if (this.state.currentUser && this.state.currentUser.communities) {
-      this.state.currentUser.communities.forEach(function(community) {
-        if (this.props.params.community_id == community.id) {
-          this.userIsMember = true;
-        }
-      }.bind(this));
+  render: function() {
+    var qustion;
+    if (this.state.question.author) {
+      question = (
+        <div className="question">
+          <p>{this.state.question.description}</p>
+          <div className="author-display">{"Posted by " + this.state.question.author.username}</div>
+        </div>
+      );
+    } else {
+      question = {};
     }
 
-    return this.userIsMember;
-  },
-
-  render: function() {
     return (
       <div className="content-divider group">
         <div className="main" id="content-main">
           <div className="content-nav group">
             <div className="title">{this.state.question.title}</div>
           </div>
-          <div className="question">
-            {this.state.question.description}
-          </div>
+          {question}
 
-          <AnswerIndex questionId={this.props.params.question_id} />
-
+          <AnswerIndex
+            questionId={this.props.params.question_id}
+            currentUser={this.props.currentUser}
+            communityId={this.props.params.community_id}/>
         </div>
 
         <SideBar />

@@ -1,12 +1,20 @@
 var AnswerIndex = React.createClass ({
 
   getInitialState: function() {
-    return {answers: AnswerStore.all()};
+    return {
+      answers: AnswerStore.all()
+    };
   },
 
   componentDidMount: function() {
     AnswerStore.addChangeListener(this._onChange);
     AnswerApiUtil.fetchAnswersForQuestion(this.props.questionId);
+
+    // tinymce.init({
+    //   selector:'textarea',
+    //   plugins: "preview",
+    //   toolbar: "preview"
+    // });
   },
 
   componentWillUnmount: function() {
@@ -17,14 +25,35 @@ var AnswerIndex = React.createClass ({
     this.setState({answers: AnswerStore.all()});
   },
 
+  isMember: function() {
+
+    var userIsMember = false;
+
+    if (this.props.currentUser && this.props.currentUser.communities) {
+      this.props.currentUser.communities.forEach(function(community) {
+        if (this.props.communityId == community.id) {
+          userIsMember = true;
+        }
+      }.bind(this));
+    }
+
+    return userIsMember;
+  },
+
   submitAnswer: function(e) {
     e.preventDefault();
 
-    var answer = $(e.currentTarget).serializeJSON();
-    debugger;
-    // SessionsApiUtil.login(credentials, function () {
-    //   // this.history.pushState(null, "/users");
-    // }.bind(this));
+    var answer = {
+      author_id: this.props.currentUser.id,
+      question_id: this.props.questionId,
+      description: $(e.currentTarget).serializeJSON().description
+    };
+
+    if (this.props.currentUser.id && this.isMember()) {
+      AnswerApiUtil.createAnswer(answer);
+    } else {
+      // error handling
+    }
   },
 
   render: function() {

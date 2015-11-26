@@ -2,6 +2,8 @@ class Answer < ActiveRecord::Base
 
   include Commentable
 
+  validates :author_id, :question_id, :description, presence: true
+
   belongs_to :question
 
   belongs_to(
