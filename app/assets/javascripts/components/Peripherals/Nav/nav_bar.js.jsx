@@ -3,7 +3,7 @@ var NavBar = React.createClass ({
   getInitialState: function() {
     return {
       currentUser: CurrentUserStore.currentUser(),
-      community: CommunityStore.havingId(parseInt(this.props.communityId)),
+      community: NavStore.havingId(parseInt(this.props.communityId)),
       communities: NavStore.all(),
       logoClicked: false,
       loginClicked: false,
@@ -74,6 +74,15 @@ var NavBar = React.createClass ({
     e.stopPropagation();
   },
 
+  joinCommunity: function() {
+    var membership = {
+      user_id: this.state.currentUser.id,
+      community_id: this.state.community.id
+    };
+
+    MembershipApiUtil.createMembership(membership);
+  },
+
   render: function() {
     var logoInjection =
       <div className="logo-dropdown" onClick={this.propagationCanceller}>
@@ -128,7 +137,7 @@ var NavBar = React.createClass ({
           profileLi = <li>Profile</li>;
         } else {
           joinCommunityLi = (
-            <li>Join Current Community</li>
+            <li onClick={this.joinCommunity}>Join Current Community</li>
           );
         }
       } else {

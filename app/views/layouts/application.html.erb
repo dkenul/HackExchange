@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>HackExchange</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>HackExchange</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
 
-  <script type="text/javascript">
-    window.images = {
-      logoIcon: "<%= asset_path('hack-exchange-logo-34-white.png') %>",
-      logoIconClicked: "<%= asset_path('hack-exchange-logo-34-black.png') %>",
-      logoIconLarge: "<%= asset_path('hack-exchange-logo-option2.png') %>",
-      mailIcon: "<%= asset_path('mail.png') %>",
-      backdrop: "<%= asset_path('noisy-texture.png') %>"
-    }
-  </script>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+    <script type="text/javascript">
+      window.images = {
+        logoIcon: "<%= asset_path('hack-exchange-logo-34-white.png') %>",
+        logoIconClicked: "<%= asset_path('hack-exchange-logo-34-black.png') %>",
+        logoIconLarge: "<%= asset_path('hack-exchange-logo-option2.png') %>",
+        mailIcon: "<%= asset_path('mail.png') %>",
+        backdrop: "<%= asset_path('noisy-texture.png') %>"
+      }
+    </script>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
 </html>
