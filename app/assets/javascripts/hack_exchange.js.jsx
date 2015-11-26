@@ -10,8 +10,21 @@ $(function(){
     getInitialState: function() {
       return {
         currentCommunity: "meta",
+        currentUser: CurrentUserStore.currentUser(),
         navReset: false
       };
+    },
+
+    componentDidMount: function() {
+      CurrentUserStore.addChangeListener(this._onUserChange);
+    },
+
+    componentWillUnmount: function() {
+      CurrentUserStore.removeChangeListener(this._onUserChange);
+    },
+
+    _onUserChange: function() {
+      this.setState({currentUser: CurrentUserStore.currentUser()});
     },
 
     updateCurrentCommunity: function(communityId) {
@@ -35,7 +48,7 @@ $(function(){
 
       return (
           <div onClick={this.navReset}>
-            <NavBar communityId={this.state.currentCommunity} key={this.state.currentCommunity} navReset={this.state.navReset}/>
+            <NavBar communityId={this.state.currentCommunity} key={this.state.currentCommunity} navReset={this.state.navReset} currentUser={this.state.currentUser}/>
             <Header communityId={this.state.currentCommunity} />
             <div className="content-container">
               <div className="content-wrap group">

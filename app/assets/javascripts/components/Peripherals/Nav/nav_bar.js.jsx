@@ -2,9 +2,9 @@ var NavBar = React.createClass ({
 
   getInitialState: function() {
     return {
-      currentUser: CurrentUserStore.currentUser(),
       community: NavStore.havingId(parseInt(this.props.communityId)),
       communities: NavStore.all(),
+      currentUser: this.props.currentUser,
       logoClicked: false,
       loginClicked: false,
       signUpClicked: false
@@ -12,14 +12,12 @@ var NavBar = React.createClass ({
   },
 
   componentDidMount: function() {
-    CurrentUserStore.addChangeListener(this._onUserChange);
     NavStore.addChangeListener(this._onCommunitiesChange);
 
     NavApiUtil.fetchCommunities();
   },
 
   componentWillUnmount: function() {
-    CurrentUserStore.removeChangeListener(this._onUserChange);
     NavStore.removeChangeListener(this._onCommunitiesChange);
   },
 
@@ -31,10 +29,12 @@ var NavBar = React.createClass ({
         signUpClicked: false
       });
     }
-  },
 
-  _onUserChange: function() {
-    this.setState({currentUser: CurrentUserStore.currentUser()});
+    if (nextProps.currentUser) {
+      this.setState({
+        currentUser: nextProps.currentUser
+      });
+    }
   },
 
   _onCommunitiesChange: function() {
@@ -102,7 +102,7 @@ var NavBar = React.createClass ({
       </div>;
 
     var rightNav;
-    if (this.state.currentUser.username === undefined) {
+    if (Object.keys(this.state.currentUser).length === 0) {
         rightNav =
         <ul className="right-nav group" onClick={this.propagationCanceller}>
           <li className="guest-li"><GuestSession /></li>

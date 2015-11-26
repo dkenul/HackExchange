@@ -1,6 +1,7 @@
 var QuestionShow = React.createClass ({
 
   getInitialState: function() {
+    debugger;
     return {
       question: QuestionStore.havingId(parseInt(this.props.params.question_id)) || {title: "", description: ""},
       currentUser: CurrentUserStore.currentUser()
