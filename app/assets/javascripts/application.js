@@ -13,16 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.serializeJSON
+//= require tinymce
 //= require react
 //= require react_ujs
 //= require ReactRouter.min
 //= require flux
 //= require eventemitter
-//= require masonry/jquery.masonry
-//= require masonry/jquery.event-drag
-//= require masonry/jquery.imagesloaded.min
-//= require masonry/jquery.infinitescroll.min
-//= require masonry/modernizr-transitions
 //= require isotope.pkgd.min
 //= require packery-mode.pkgd
 //= require components

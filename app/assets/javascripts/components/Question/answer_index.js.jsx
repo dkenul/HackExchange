@@ -17,6 +17,16 @@ var AnswerIndex = React.createClass ({
     this.setState({answers: AnswerStore.all()});
   },
 
+  submitAnswer: function(e) {
+    e.preventDefault();
+
+    var answer = $(e.currentTarget).serializeJSON();
+    debugger;
+    // SessionsApiUtil.login(credentials, function () {
+    //   // this.history.pushState(null, "/users");
+    // }.bind(this));
+  },
+
   render: function() {
     var answers = this.state.answers.map(function(answer) {
       return <div className="answer" key={answer.id}>{answer.description}</div>;
@@ -35,9 +45,19 @@ var AnswerIndex = React.createClass ({
     return (
       <div>
         {numAnswers}
+
         <div className="answers-container">
           {answers}
         </div>
+
+        <form className="answer-form" onSubmit={this.submitAnswer}>
+          <label>
+            <h3>Your Answer</h3>
+            <textarea name="description"></textarea>
+          </label>
+
+          <button className="submit-answer">Post Answer</button>
+        </form>
       </div>
     );
   }

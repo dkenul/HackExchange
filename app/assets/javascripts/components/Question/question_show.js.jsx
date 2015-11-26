@@ -10,6 +10,13 @@ var QuestionShow = React.createClass ({
   componentDidMount: function() {
     QuestionStore.addChangeListener(this._onChange);
     QuestionApiUtil.fetchSingleQuestion(this.props.params.question_id);
+
+    tinymce.init({
+      selector:'textarea',
+      theme: 'modern',
+      plugins: "preview",
+      toolbar: "preview"
+    });
   },
 
   componentWillUnmount: function() {
@@ -34,10 +41,6 @@ var QuestionShow = React.createClass ({
     return this.userIsMember;
   },
 
-  submitAnswer: function(e) {
-    e.preventDefault();
-  },
-
   render: function() {
     return (
       <div className="content-divider group">
@@ -51,13 +54,6 @@ var QuestionShow = React.createClass ({
 
           <AnswerIndex questionId={this.props.params.question_id} />
 
-          <form className="answer-form" onSubmit={this.submitAnswer}>
-            <label>Post an Answer
-              <textarea name="description"></textarea>
-            </label>
-
-            <button>Submit</button>
-          </form>
         </div>
 
         <SideBar />

@@ -450,10 +450,60 @@ body {
   }
 
   .main .answers-container {
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-top: 20px;
     border-top: 1px solid #e0e0e0;
+  }
+
+  .main .answers-container > .answer {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .main .answers-container > .answer:first-child {
+
+  }
+
+  .main .answers-container > .answer:last-child {
+    padding-bottom: 20px;
+    border-bottom: 0;
+  }
+
+  .main .answer-form {
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .main .answer-form label {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .main .answer-form label  h3{
+    padding-bottom: 20px;
+  }
+
+  .main .answer-form textarea {
+    display: block;
+    width: 600px;
+    height: 300px;
+    margin-top: 20px;
+  }
+
+  .main .answer-form .submit-answer {
+    display:block;
+    margin-bottom: 40px;
+    background: #da7968;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: 0;
+    height: 40px;
+    width: 100px;
+  }
+
+  .main .answer-form .submit-answer:hover {
+    cursor: pointer;
   }
 
 
