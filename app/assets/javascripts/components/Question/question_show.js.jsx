@@ -23,8 +23,7 @@ var QuestionShow = React.createClass ({
   isMember: function() {
 
     this.userIsMember = false;
-    if (this.state.currentUser) {
-      debugger;
+    if (this.state.currentUser && this.state.currentUser.communities) {
       this.state.currentUser.communities.forEach(function(community) {
         if (this.props.params.community_id == community.id) {
           this.userIsMember = true;
@@ -40,30 +39,25 @@ var QuestionShow = React.createClass ({
   },
 
   render: function() {
-
-    var answerForm;
-    currentUser = CurrentUserStore.currentUser();
-    if (this.isMember(currentUser)) {
-      answerForm = (
-        <form className="answer-form" onSubmit={this.submitAnswer}>
-          <label>Post an Answer
-            <textarea name="description"></textarea>
-          </label>
-
-          <button>Submit</button>
-        </form>
-      );
-    }
-
     return (
       <div className="content-divider group">
         <div className="main" id="content-main">
           <div className="content-nav group">
             <div className="title">{this.state.question.title}</div>
           </div>
-          <div className="question">{this.state.question.description}</div>
+          <div className="question">
+            {this.state.question.description}
+          </div>
 
-          {answerForm}
+          <AnswerIndex questionId={this.props.params.question_id} />
+
+          <form className="answer-form" onSubmit={this.submitAnswer}>
+            <label>Post an Answer
+              <textarea name="description"></textarea>
+            </label>
+
+            <button>Submit</button>
+          </form>
         </div>
 
         <SideBar />

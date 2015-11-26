@@ -16,6 +16,8 @@ class Question < ActiveRecord::Base
     source: :community
   )
 
+  has_many :answers
+
   scope :by_community_id, -> (id) { where("community_id = ?", id) }
   scope :having_title, -> (title) { where title: title }
 end

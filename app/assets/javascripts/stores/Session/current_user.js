@@ -21,6 +21,10 @@
       return (typeof _currentUser.id !== "undefined");
     },
 
+    addCommunity: function(community) {
+      _currentUser.communities.push(community);
+    },
+
     dispatcherId: AppDispatcher.register(function (payload) {
       switch (payload.actionType) {
         case CurrentUserConstants.RECEIVE_CURRENT_USER:
@@ -28,7 +32,11 @@
           CurrentUserStore.emit(CHANGE_EVENT);
           break;
 
-      }
+        case CurrentUserConstants.ADD_MEMBERSHIP:
+          CurrentUserStore.addCommunity(payload.community);
+          CurrentUserStore.emit(CHANGE_EVENT);
+          break;
+    }
     }),
   });
 })(this);

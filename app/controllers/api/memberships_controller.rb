@@ -7,7 +7,7 @@ class Api::MembershipsController < ApplicationController
     )
 
     if @membership.save
-      render json: @membership
+      render 'show'
     end
 
   end
