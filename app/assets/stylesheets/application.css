@@ -496,6 +496,17 @@ body {
     border-top: 1px solid #e0e0e0;
   }
 
+  .main .comments-container > .comment > p {
+    float: left;
+    width: 500px;
+  }
+
+  .main .comments-container > .comment > .comment-author {
+    margin-left: 20px;
+    float: left;
+    font-weight: bold;
+  }
+
   .main .comments-container > .comment:last-child {
     border-bottom: 1px solid #e0e0e0;
   }

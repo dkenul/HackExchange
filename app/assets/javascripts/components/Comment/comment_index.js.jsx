@@ -62,6 +62,7 @@ var CommentIndex = React.createClass ({
       return (
         <div key={comment.id} className="comment group">
           <p>{comment.description}</p>
+          <div className="comment-author">{"by " + comment.author.username}</div>
         </div>
       );
     });

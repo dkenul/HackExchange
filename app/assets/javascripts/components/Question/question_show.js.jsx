@@ -26,7 +26,7 @@ var QuestionShow = React.createClass ({
         <div className="question group">
           <p>{this.state.question.description}</p>
           <div className="group">
-            <div className="author-display">{"Posted by " + this.state.question.author.username}</div>
+            <div className="author-display">{this.state.question.author.username}</div>
           </div>
           <CommentIndex
             commentableId={this.props.params.question_id}

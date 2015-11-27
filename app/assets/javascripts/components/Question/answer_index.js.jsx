@@ -61,7 +61,7 @@ var AnswerIndex = React.createClass ({
       return (
           <div className="answer group" key={answer.id}>
             <p>{answer.description}</p>
-            <div className="author-display">{"Posted by " + answer.author.username}</div>
+            <div className="author-display">{answer.author.username}</div>
           </div>
         );
     });
