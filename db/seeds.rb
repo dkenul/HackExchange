@@ -6,38 +6,38 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-communities = %w{
-  Javascript
-  Mathematics
-  Biology
-  Physics
-  Ruby
-  Rails
-  Matlab
-  Chemistry
-  C++
-  HTML
-  CSS
-  ReactJs
-  Economics
-  jQuery
-  Fortran
-  Lolcode
-  Java
-  Python
-  Perl
-  SQL
-  Game Design
-  Clojure
-  Julia
-  Haskell
-  Scala
-  Erlang
-  Ada
-  Image Processing
-  Engineering
-  Data Analysis
-}
+communities = [
+  "Javascript",
+  "Mathematics",
+  "Biology",
+  "Physics",
+  "Ruby",
+  "Rails",
+  "Matlab",
+  "Chemistry",
+  "C++",
+  "HTML",
+  "CSS",
+  "ReactJs",
+  "Economics",
+  "jQuery",
+  "Fortran",
+  "Lolcode",
+  "Java",
+  "Python",
+  "Perl",
+  "SQL",
+  "Game Design",
+  "Clojure",
+  "Julia",
+  "Haskell",
+  "Scala",
+  "Erlang",
+  "Ada",
+  "Image Processing",
+  "Engineering",
+  "Data Analysis"
+]
 
 descriptions = [
   "This is a community for",
@@ -125,7 +125,7 @@ usernames = [
 
 30.times do |i|
   User.create(username: "#{usernames.sample}#{i+1}", password: "hello6", email: "User#{i+1}@gmail")
-  Community.create(name: communities[i], description: "#{descriptions.sample} #{communities[i+1]}", owner_id: i+1)
+  Community.create(name: communities[i], description: "#{descriptions.sample} #{communities[i]}", owner_id: i+1)
   Membership.create(member_id: i+1, community_id: i+1);
 end
 

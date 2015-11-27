@@ -88,7 +88,8 @@ var NavBar = React.createClass ({
       <div className="logo-dropdown" onClick={this.propagationCanceller}>
         <LogoDropdown
           communities={this.state.communities}
-          community={this.state.community} />
+          community={this.state.community}
+          currentUser={this.props.currentUser} />
       </div>;
 
     var loginInjection =

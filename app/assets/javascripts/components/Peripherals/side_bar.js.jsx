@@ -11,15 +11,15 @@ var SideBar = React.createClass ({
         </div>
         <h2>Top Users</h2>
         <ul className="top-users">
-          <li>User0</li>
-          <li>User1</li>
-          <li>User2</li>
+          <li>Damon</li>
+          <li>Spambot20</li>
+          <li>VaultDweller7</li>
         </ul>
         <h2>Hot Communities</h2>
         <ul className="hot-communities">
           <li>Lolcode</li>
           <li>Physics</li>
-          <li>React</li>
+          <li>ReactJs</li>
         </ul>
       </div>
     );

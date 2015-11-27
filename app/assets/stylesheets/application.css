@@ -180,14 +180,20 @@ body {
     padding-left: 7px;
   }
 
+  .community-name {
+    font-weight: bold;
+  }
+
   .community-description {
     padding-top: 5px;
+    font-size: 12px;
   }
 
   .community-item-container {
     padding-left: 7px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
   }
 
   .community-item-container:hover {
@@ -382,8 +388,10 @@ body {
     padding: 5px 10px;
     margin: 0 5px;
     margin-bottom: 10px;
-    background: orange;
-    border-radius: 10px;
+
+    background: #da7968;
+    border-radius: 5px;
+    color: #fdfdfd;
   }
 
   .pagination .page {
@@ -392,6 +400,7 @@ body {
 
   .pagination .page.clicked {
     background: #eee;
+    color: #000;
   }
 
   /* Sidebar */
