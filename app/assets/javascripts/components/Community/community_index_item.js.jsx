@@ -12,7 +12,7 @@ var CommunityIndexItem = React.createClass ({
 
   },
 
-  componentWillReceiveProps: function() {
+  componentWillUpdate: function() {
     $('.grid').isotope({
       layoutMode: 'packery',
       itemSelector: '.grid-item',

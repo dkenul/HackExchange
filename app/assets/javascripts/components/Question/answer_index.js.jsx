@@ -58,7 +58,12 @@ var AnswerIndex = React.createClass ({
 
   render: function() {
     var answers = this.state.answers.map(function(answer) {
-      return <div className="answer" key={answer.id}>{answer.description}</div>;
+      return (
+          <div className="answer group" key={answer.id}>
+            <p>{answer.description}</p>
+            <div className="author-display">{"Posted by " + answer.author.username}</div>
+          </div>
+        );
     });
 
     var numAnswers;

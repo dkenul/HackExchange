@@ -8,6 +8,7 @@ var Header = React.createClass ({
   },
 
   render: function() {
+
     var header;
     var nav;
     if (this.state.community === null) {

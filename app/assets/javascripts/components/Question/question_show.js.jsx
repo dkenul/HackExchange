@@ -23,7 +23,7 @@ var QuestionShow = React.createClass ({
     var qustion;
     if (this.state.question.author) {
       question = (
-        <div className="question">
+        <div className="question group">
           <p>{this.state.question.description}</p>
           <div className="author-display">{"Posted by " + this.state.question.author.username}</div>
         </div>
