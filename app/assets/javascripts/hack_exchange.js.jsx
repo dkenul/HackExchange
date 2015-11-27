@@ -61,7 +61,7 @@ $(function(){
             <div className="content-container">
               <div className="content-wrap group">
                 {this.renderChildren()}
-                </div>
+              </div>
             </div>
             <Footer />
           </div>

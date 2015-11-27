@@ -299,9 +299,11 @@ body {
 }
 
 .header-nav.sub > li {
-  background: #9ea3a9;
+  background: #da7968;
+  border-radius: 5px;
+  font-size: 14px;
   margin-right: 5px;
-  color: #white;
+  color: #fdfdfd;
 }
 
 .header-nav > li:hover {
