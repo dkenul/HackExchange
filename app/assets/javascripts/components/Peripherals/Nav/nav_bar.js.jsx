@@ -167,7 +167,6 @@ var NavBar = React.createClass ({
                 src={this.state.logoClicked ? window.images.logoIconClicked : window.images.logoIcon} />
             </li>
             {this.state.logoClicked ? logoInjection : ""}
-            <li><img className="mail-icon" src={window.images.mailIcon} /></li>
           </ul>
 
           {rightNav}
