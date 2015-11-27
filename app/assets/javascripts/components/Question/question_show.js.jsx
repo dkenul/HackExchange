@@ -20,7 +20,7 @@ var QuestionShow = React.createClass ({
   },
 
   render: function() {
-    var qustion;
+    var question;
     if (this.state.question.author) {
       question = (
         <div className="question group">
@@ -31,7 +31,7 @@ var QuestionShow = React.createClass ({
           <CommentIndex
             commentableId={this.props.params.question_id}
             commentableType="Question"
-            currentUser={this.props.params.currentUser}
+            currentUser={this.props.currentUser}
             communityId={this.props.params.community_id}/>
         </div>
       );

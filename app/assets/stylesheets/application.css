@@ -542,6 +542,59 @@ body {
     cursor: pointer;
   }
 
+  /* COMMENT FORM*/
+
+  .main .comment-form {
+
+  }
+
+  .main .comment-form.hidden {
+    display: none;
+  }
+
+  .main .toggler {
+    color: #366fb3;
+    font-size: 14px;
+    padding-top: 20px;
+  }
+
+  .main .toggler:hover {
+    cursor: pointer;
+  }
+
+  .main .comment-form label {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .main .comment-form label  h3{
+    padding-bottom: 20px;
+  }
+
+  .main .comment-form textarea {
+    display: block;
+    width: 600px;
+    height: 300px;
+    margin-top: 10px;
+  }
+
+  .main .comment-form .submit-comment {
+    display:block;
+    margin-bottom: 40px;
+    background: #da7968;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: 0;
+    height: 40px;
+    width: 100px;
+  }
+
+  .main .comment-form .submit-comment:hover {
+    cursor: pointer;
+  }
+
 
 
   /* COMMUNITIES */

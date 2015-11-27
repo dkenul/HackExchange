@@ -119,14 +119,21 @@ usernames = [
   "CeleneDion",
   "VaultDweller",
   "CodeNewbie",
-  "SelfProclaimedExpert"
+  "SelfProclaimedExpert",
+  "Breakfast",
+  "Dogs>Cats",
+
 ]
 
 comments = [
   "Hey I'm a comment",
   "This is a really cool question!!!",
   "Hahaha this is so simple",
-  "I'll get back to you on this"
+  "I'll get back to you on this",
+  "You should check the docs on this one",
+  "This is a really long comment. I'm not sure why I'm even commenting instead of just answering the damn question. Maybe I just like the small font, who knows. What was the question again?",
+  "This is a duplicate. Please try searching before asking a new question.",
+  "Could you post a little more information?"
 ]
 
 

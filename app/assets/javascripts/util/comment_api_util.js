@@ -25,7 +25,7 @@ var CommentApiUtil = {
     });
   },
 
-  createComment: function(comment) {
+  kreateComment: function(comment) {
     $.ajax({
       url: 'api/comments',
       type: 'POST',
