@@ -7,7 +7,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.page(params[:page])
+    @questions = Question.all_by_popularity.page(params[:page])
 
     render 'index'
   end

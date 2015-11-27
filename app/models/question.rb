@@ -21,7 +21,16 @@ class Question < ActiveRecord::Base
   scope :by_community_id, -> (id) { where("community_id = ?", id) }
   scope :having_title, -> (title) { where title: title }
 
+  def self.all_by_popularity
+    Question
+      .select('questions.*, COUNT(answers.id) as answers_count')
+      .joins(:answers)
+      .group('questions.id')
+      .order('answers_count DESC')
+  end
+
   def times_answered
     self.answers.size
   end
+
 end

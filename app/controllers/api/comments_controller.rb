@@ -1,7 +1,6 @@
 class Api::CommentsController < ApplicationController
   def index
-    byebug
-    @comment = Comment.all
+    @comments = params[:commentable_type].constantize.find_by_id(params[:commentable_id]).comments
 
     render 'index'
   end

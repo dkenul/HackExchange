@@ -46,7 +46,8 @@ var CommunityShow = React.createClass ({
               <li>Top Questions</li>
             </ul>
             <ul className="right-nav">
-              <li>Hot</li>
+              <li className="clicked">Hot</li>
+              <li>New</li>
               <li>Live</li>
             </ul>
           </div>

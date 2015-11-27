@@ -25,7 +25,14 @@ var QuestionShow = React.createClass ({
       question = (
         <div className="question group">
           <p>{this.state.question.description}</p>
-          <div className="author-display">{"Posted by " + this.state.question.author.username}</div>
+          <div className="group">
+            <div className="author-display">{"Posted by " + this.state.question.author.username}</div>
+          </div>
+          <CommentIndex
+            commentableId={this.props.params.question_id}
+            commentableType="Question"
+            currentUser={this.props.params.currentUser}
+            communityId={this.props.params.community_id}/>
         </div>
       );
     } else {
