@@ -681,16 +681,46 @@ body {
   }
 
   .questions-container > ul > li {
-    font-size: 16px;
-    color: darkblue;
+    font-size: 18px;
+    color: #366fb3;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
     border-bottom: 1px solid #e0e0e0;
   }
 
+  .questions-container > ul > li:hover {
+    color: #66b2ff;
+  }
+
   .questions-container > ul > li:first-child {
     border-top: 1px solid #e0e0e0;
+  }
+
+  .questions-container > ul > li.show > div {
+    color: #000;
+    font-size: 12px;
+    float: left;
+  }
+
+  .questions-container > ul > li.show > div > h3 {
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 5px;
+  }
+
+  .questions-container > ul > li.show > div > p {
+    font-size: 12px;
+    font-weight: normal;
+    padding-bottom: 5px;
+  }
+
+  .questions-container > ul > li.show > a {
+    display: block;
+    max-width: 620px;
+    float: left;
+    padding-left: 20px;
+
   }
 
   .questions-container {

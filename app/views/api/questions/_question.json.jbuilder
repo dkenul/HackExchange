@@ -1,4 +1,4 @@
-json.extract! question, :id, :title, :membership
+json.extract! question, :id, :title, :membership, :times_answered
 
 show_full_data ||= false
 

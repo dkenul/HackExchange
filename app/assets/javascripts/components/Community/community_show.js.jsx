@@ -25,7 +25,11 @@ var CommunityShow = React.createClass ({
     if (this.state.community && this.state.community.questions) {
       questions = this.state.community.questions.map(function(question) {
         return (
-          <li key={question.id}>
+          <li key={question.id} className="show group">
+            <div>
+              <h3>{question.times_answered}</h3>
+              <p>{question.times_answered === 1 ? "answer" : "answers"}</p>
+            </div>
             <a href={"#/communities/" + this.state.community.id + "/questions/" + question.id}>{question.title}</a>
           </li>
         );
@@ -47,8 +51,7 @@ var CommunityShow = React.createClass ({
             </ul>
           </div>
 
-          <div className="questions-container">
-
+          <div className="questions-container group">
             <ul>
               {questions}
             </ul>

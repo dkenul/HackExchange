@@ -20,4 +20,8 @@ class Question < ActiveRecord::Base
 
   scope :by_community_id, -> (id) { where("community_id = ?", id) }
   scope :having_title, -> (title) { where title: title }
+
+  def times_answered
+    self.answers.size
+  end
 end

@@ -30,14 +30,14 @@ var QuestionIndex = React.createClass ({
   render: function() {
     var questions = this.state.questions.map(function(question) {
       return  (
-        <li key={question.id}>
+        <li key={question.id} className="group">
           <a href={"#/communities/" + question.membership.community_id + "/questions/" + question.id}>{question.title}</a>
         </li>
       );
     });
 
     return (
-      <div className="questions-container">
+      <div className="questions-container group">
         <ul>
           {questions}
         </ul>

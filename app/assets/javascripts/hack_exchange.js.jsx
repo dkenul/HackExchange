@@ -70,7 +70,7 @@ $(function(){
   });
 
   var routes = (
-      <Route path="/" components={App}>
+      <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
         <Route path="communities" component={CommunityIndex} />
         <Route path="communities/:community_id" component={CommunityShow}/>

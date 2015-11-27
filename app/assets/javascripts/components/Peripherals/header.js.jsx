@@ -19,7 +19,7 @@ var Header = React.createClass ({
     } else {
       header = <p><a href={"#/communities/" + this.state.community.id }>{this.state.community.name}</a></p>;
       nav = <ul className="header-nav sub group">
-        <li>Questions</li>
+        <li><a href={"#/communities/" + this.state.community.id }>Questions</a></li>
         <li>Tags</li>
         <li>Users</li>
         <li>Badges</li>
