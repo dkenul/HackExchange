@@ -37,6 +37,7 @@ gem 'spring'
 
 gem 'kaminari'
 gem 'tinymce-rails'
+gem 'faker'
 
 # for windows fun
 # gem 'tzinfo-data'
