@@ -75,7 +75,7 @@ $(function(){
         <Route path="communities" component={CommunityIndex} />
         <Route path="communities/:community_id" component={CommunityShow}/>
         <Route path="communities/:community_id/questions/:question_id" component={QuestionShow} />
-        <Route path="profile/:user_id/community/:community_id" component={Profile} />
+        <Route path="users/:user_id" component={userShow} />
       </Route>
   );
 

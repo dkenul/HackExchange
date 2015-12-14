@@ -29,6 +29,12 @@ class User < ActiveRecord::Base
     foreign_key: :author_id
   )
 
+  has_many(
+    :comments,
+    class_name: "Comment",
+    foreign_key: :author_id
+  )
+
 
   attr_reader :password
 

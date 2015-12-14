@@ -1,1 +1,3 @@
-json.partial! 'api/users/user', collection: @users, as: :user
+json.array!(@users) do |user|
+  json.partial!('user', user: user, show_full_data: false)
+end

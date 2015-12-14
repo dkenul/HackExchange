@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :users, only: [:index, :create, :show]
     resources :memberships, only: [:create, :destroy]
+
+    # get '/memberships/:community_id/:user_id', to: 'memberships#show'
   end
 
 

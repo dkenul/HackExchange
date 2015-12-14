@@ -142,7 +142,7 @@ var NavBar = React.createClass ({
           );
         }
       } else {
-        profileLi = <li>{this.state.currentUser.username}</li>;
+        profileLi = <a href={'#/users/' + this.state.currentUser.id}>{this.state.currentUser.username}</a>;
       }
 
 

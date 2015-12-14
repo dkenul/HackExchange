@@ -11,5 +11,4 @@ var MembershipApiUtil = {
     });
   }
 
-
 };

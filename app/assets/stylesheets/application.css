@@ -52,6 +52,11 @@ body {
   font-family: helvetica;
 }
 
+/* DEFAULT LINK BEHAVIOR */
+
+a {
+  display: block;
+}
 
 
 /* NAVIGATION */
@@ -70,7 +75,8 @@ body {
   display: none;
 }
 
-.nav li {
+.nav li,
+.right-nav a {
   display: block;
   float: left;
   height: 34px;
@@ -81,7 +87,8 @@ body {
   padding-right: 7px;
 }
 
-.right-nav li {
+.right-nav li,
+.right-nav a {
   position: relative;
   height: 24px;
   padding-top: 10px;
@@ -111,7 +118,8 @@ body {
   padding-top: 8px;
 }
 
-.nav li:hover {
+.nav li:hover,
+.right-nav a:hover {
   background: #545454;
   cursor: pointer;
 }

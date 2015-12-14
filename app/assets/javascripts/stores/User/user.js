@@ -2,10 +2,6 @@
   var _users = [];
   var CHANGE_EVENT = "change";
 
-  var _addUser = function (newUser) {
-    _users.unshift(newUser);
-  };
-
   root.UsersStore = $.extend({}, EventEmitter.prototype, {
 
     addChangeListener: function (callback) {
@@ -20,6 +16,17 @@
       return _users.slice();
     },
 
+    resetUser: function(user) {
+      var switched = false;
+      _users.forEach(function(u) {
+        if (u.id === user.id) {
+          _users[_users.indexOf(u)] = user;
+          switched = true;
+        }
+      });
+      if (!switched) {_users.push(user);}
+    },
+
     dispatcherId: AppDispatcher.register(function (payload) {
       switch (payload.actionType) {
 
@@ -29,10 +36,9 @@
           break;
 
         case UserConstants.RECEIVE_USER:
-          _addUser(payload.user);
+          UsersStore.resetUser(payload.user);
           UsersStore.emit(CHANGE_EVENT);
           break;
-
       }
     }),
 

@@ -11,5 +11,16 @@ var UserApiUtil = {
         callback && callback();
       }
     });
+  },
+
+  fetchSingleUser: function (id) {
+    $.ajax({
+      url: '/api/users/' + id,
+      type: 'GET',
+      dataType: 'json',
+      success: function(user) {
+        UserActions.receiveUser(user);
+      }
+    })
   }
 };
