@@ -1,0 +1,54 @@
+/* HEADER */
+
+.header img {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 250px;
+}
+
+.header img:hover {
+  cursor: pointer;
+}
+
+.header p {
+  float: left;
+  font-size: 36px;
+  margin-top: 30px;
+  padding-left: 10px;
+}
+
+.header-nav {
+  float: right;
+  margin-top: 40px;
+}
+
+.header-nav > li {
+  font-size: 16px;
+  padding: 3px 5px;
+  float: left;
+}
+
+.header-nav.sub > li {
+  background: #da7968;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-right: 5px;
+  color: #fdfdfd;
+}
+
+.header-nav > li:hover {
+    cursor: pointer;
+    background: orange;
+}
+
+
+.header-container {
+
+}
+
+.header {
+  width: 980px;
+  margin: 0 auto;
+  height: 110px;
+}

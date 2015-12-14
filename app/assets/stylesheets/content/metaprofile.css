@@ -1,0 +1,23 @@
+.profile-container {
+  padding-left: 20px;
+}
+
+
+.top-section {
+  height: 100px;
+  padding-top: 50px;
+}
+
+.top-section .username {
+  font-size: 30px;
+  color: darkgreen;
+}
+
+.bottom-section-nav {
+  height: 34px;
+}
+
+.bottom-section-nav li {
+  float: right;
+  padding: 0 7px;
+}
