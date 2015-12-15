@@ -17,17 +17,19 @@ var Header = React.createClass ({
         <li><a href={"#/communities"}>All Communities</a></li>
       </ul>;
     } else {
-      header = <p>
-        <img
-          className="community-logo"
-          src={window.images[this.state.community.name] ? window.images[this.state.community.name] : window.images.Default}
-        />
-        <a
-          className="community-name" 
-          href={"#/communities/" + this.state.community.id }>
-          {this.state.community.name}
-        </a>
-      </p>;
+      header =
+        <p>
+          <img
+            className="community-logo"
+            src={window.images[this.state.community.name] ? window.images[this.state.community.name] : window.images.Default}
+          />
+          <a
+            className="community-name"
+            href={"#/communities/" + this.state.community.id }>
+            {this.state.community.name}
+          </a>
+        </p>;
+        
       nav = <ul className="header-nav sub group">
         <li><a href={"#/communities/" + this.state.community.id }>Questions</a></li>
         <li>Tags</li>

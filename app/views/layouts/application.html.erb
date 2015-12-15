@@ -11,18 +11,14 @@
         logoIcon: "<%= asset_path('logo-small-white-green.png') %>",
         logoIconClicked: "<%= asset_path('logo-small-black-green.png') %>",
         logoIconLarge: "<%= asset_path('logo-1.png') %>",
-        jQuery: "<%= asset_path('jQuery.png') %>",
-        Ruby: "<%= asset_path('Ruby.png') %>",
-        Lolcode: "<%= asset_path('Lolcode.png') %>",
-        Matlab: "<%= asset_path('Matlab.png') %>",
-        Javascript: "<%= asset_path('Javascript.png') %>",
+
+        <% Community.all.each do |community| %>
+          <% if asset_path(%Q(#{community.name}.png)) =~ /assets/ %>
+            <%= "'#{community.name}': '#{asset_path(%Q(#{community.name}.png))}',".html_safe %>
+          <% end %>
+        <% end %>
+
         "C++": "<%= asset_path('Cpp.png') %>",
-        Mathematics: "<%= asset_path('Mathematics.png') %>",
-        Fortran: "<%= asset_path('Fortran.png') %>",
-        HTML: "<%= asset_path('HTML.png') %>",
-        CSS: "<%= asset_path('CSS.png') %>",
-        Clojure: "<%= asset_path('Clojure.png') %>",
-        SQL: "<%= asset_path('SQL.png') %>",
         Default: "<%= asset_path('Default.png') %>"
       }
     </script>

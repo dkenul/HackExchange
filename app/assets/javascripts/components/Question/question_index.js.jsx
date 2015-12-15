@@ -31,7 +31,13 @@ var QuestionIndex = React.createClass ({
     var questions = this.state.questions.map(function(question) {
       return  (
         <li key={question.id} className="group">
-          <a href={"#/communities/" + question.membership.community_id + "/questions/" + question.id}>{question.title}</a>
+          <a href={"#/communities/" + question.community.id + "/questions/" + question.id}>
+            <img
+              className="community-logo"
+              src={window.images[question.community.name] ? window.images[question.community.name] : window.images.Default}
+            />
+            {question.title}
+          </a>
         </li>
       );
     });

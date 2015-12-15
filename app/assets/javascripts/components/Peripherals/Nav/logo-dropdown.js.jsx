@@ -5,9 +5,12 @@ var LogoDropdown = React.createClass ({
       return (
         <div className="community-item-container" key={community.id}>
           <a href={"#/communities/" + community.id} className="community-item group">
-            <img src="http://placecorgi.com/25/25" className="community-item-thumb" />
+            <img
+              className="community-logo all-communities"
+              src={window.images[community.name] ? window.images[community.name] : window.images.Default}
+            />
             <div className="text-container">
-              <div className="community-name">{community.name}</div>
+              <div className="community-name all-communities">{community.name}</div>
               <div className="community-description">{community.description}</div>
             </div>
           </a>
@@ -24,10 +27,12 @@ var LogoDropdown = React.createClass ({
           return (
             <div className="community-item-container" key={community.id}>
               <a href={"#/communities/" + community.id} className="community-item group">
-                <img src="http://placecorgi.com/25/25" className="community-item-thumb" />
+                <img
+                  className="community-logo"
+                  src={window.images[community.name] ? window.images[community.name] : window.images.Default}
+                />
                 <div className="text-container">
-                  <div className="community-name">{community.name}</div>
-                  <div className="community-description">{community.description}</div>
+                  <div className="community-name your-communities">{community.name}</div>
                 </div>
               </a>
             </div>

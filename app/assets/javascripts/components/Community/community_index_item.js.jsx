@@ -57,6 +57,10 @@ var CommunityIndexItem = React.createClass ({
         onClick={this.receiveClick}>
         <div className="community-tile">
           <div className="community-name">{community.name}</div>
+          <img
+            className="community-logo"
+            src={window.images[community.name] ? window.images[community.name] : window.images.Default}
+          />
           {description}
           {link}
         </div>

@@ -35,7 +35,7 @@ h1, h2, h3, p, strong, em, a, ul, div {
 }
 
 img {
-  display: block;
+  /*display: block;*/
 }
 
 .group:after {

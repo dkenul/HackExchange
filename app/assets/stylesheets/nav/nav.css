@@ -117,9 +117,13 @@
     background: #e9f7fd;
   }
 
-  .community-item-thumb {
+  .community-item-container .community-logo {
     float: left;
     width: 25px;
+  }
+
+  .community-item-container .community-logo.all-communities {
+    padding-top: 5px;
   }
 
   .text-container {
@@ -129,6 +133,15 @@
 
   .community-name {
     font-weight: bold;
+  }
+
+  .community-name.your-communities {
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+
+  .community-name.all-communities {
+    font-size: 14px;
   }
 
   .community-description {
