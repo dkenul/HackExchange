@@ -1,26 +1,37 @@
 /* HEADER */
 
-.header img {
+.header .logo-in {
   float: left;
   margin-top: 10px;
   margin-left: 10px;
   width: 250px;
 }
 
-.header img:hover {
+.header .logo-in:hover {
   cursor: pointer;
+}
+
+.header .community-logo {
+  float: left;
+  width: 60px;
 }
 
 .header p {
   float: left;
   font-size: 36px;
-  margin-top: 30px;
+  margin-top: 25px;
   padding-left: 10px;
+}
+
+.header .community-name {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .header-nav {
   float: right;
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .header-nav > li {
