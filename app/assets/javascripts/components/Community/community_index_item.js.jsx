@@ -33,6 +33,7 @@ var CommunityIndexItem = React.createClass ({
     var boxSize;
     var description;
     var link;
+    var fullTile;
     if (this.props.idx === this.props.clickedTile) {
       boxSize = "huge-box";
     } else if (community.popularity <= TileConstants.SMALL_BOX) {
@@ -48,6 +49,28 @@ var CommunityIndexItem = React.createClass ({
       link = <a
         href={"#/communities/" + community.id}
         className="community-link">Visit Community</a>;
+
+      fullTile =
+        <div className="community-tile">
+          <div className="group">
+            <img
+              className="community-logo expanded"
+              src={window.images[community.name] ? window.images[community.name] : window.images.Default}
+            />
+            <div className="community-name expanded">{community.name}</div>
+          </div>
+          {description}
+          {link}
+        </div>;
+    } else {
+      fullTile =
+        <div className="community-tile">
+          <div className="community-name">{community.name}</div>
+          <img
+            className="community-logo"
+            src={window.images[community.name] ? window.images[community.name] : window.images.Default}
+          />
+        </div>;
     }
 
 
@@ -55,15 +78,7 @@ var CommunityIndexItem = React.createClass ({
       <div
         className={"grid-item " + "grid-item--" + boxSize}
         onClick={this.receiveClick}>
-        <div className="community-tile">
-          <div className="community-name">{community.name}</div>
-          <img
-            className="community-logo"
-            src={window.images[community.name] ? window.images[community.name] : window.images.Default}
-          />
-          {description}
-          {link}
-        </div>
+        {fullTile}
       </div>
     );
   }

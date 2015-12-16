@@ -314,7 +314,7 @@
     height: 260px;
   }
 
-  .grid-item .community-name {
+  .grid-item--small-box .community-name {
     text-align: center;
     font-size: 10px;
     font-weight: bold;
@@ -368,12 +368,31 @@
     width: 200px;
     text-align: center;
     padding: 10px 0;
-    margin-top: 40px;
+    margin-top: 60px;
     margin-right: 20px;
     font-size: 24px;
-    background: #eee;
     border: 1px solid #ccc;
     box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    border-radius: 10px;
+
+
+    background: rgb(226,226,226); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+
+  }
+
+  .expanded {
+    float: left;
+    padding-top: 30px;
+  }
+
+  .expanded.community-logo {
+    width: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .grid-item--huge-box .community-link:hover {

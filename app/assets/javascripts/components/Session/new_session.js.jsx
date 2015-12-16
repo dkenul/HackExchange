@@ -35,7 +35,7 @@
               </div>
             </label>
 
-            <button>Log In!</button>
+            <button>Sign In!</button>
           </form>
       );
     },
