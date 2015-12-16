@@ -9,7 +9,6 @@ var CommunityIndexItem = React.createClass ({
       },
       isAnimated: true
     });
-
   },
 
   componentWillUpdate: function() {
@@ -22,6 +21,10 @@ var CommunityIndexItem = React.createClass ({
       isAnimated: true
     });
   },
+
+  // shouldComponentUpdate: function() {
+  //   return false;
+  // },
 
   receiveClick: function() {
     this.props.handleClick(this.props.idx);

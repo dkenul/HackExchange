@@ -8,7 +8,6 @@ var Header = React.createClass ({
   },
 
   render: function() {
-
     var header;
     var nav;
     if (this.state.community === null) {
@@ -29,14 +28,14 @@ var Header = React.createClass ({
             {this.state.community.name}
           </a>
         </p>;
-        
+
       nav = <ul className="header-nav sub group">
         <li><a href={"#/communities/" + this.state.community.id }>Questions</a></li>
         <li>Tags</li>
         <li>Users</li>
         <li>Badges</li>
         <li>Unanswered</li>
-        <li>Ask Question</li>
+        <li><a href={"#/communities/" + this.state.community.id + "?ask"}>Ask Question</a></li>
       </ul>;
     }
 

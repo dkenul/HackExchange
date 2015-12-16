@@ -1,6 +1,8 @@
 var CommunityShow = React.createClass ({
   getInitialState: function() {
-    return { community: CommunityStore.havingId(parseInt(this.props.params.community_id)) };
+    return {
+      community: CommunityStore.havingId(parseInt(this.props.params.community_id))
+    };
   },
 
   componentDidMount: function() {
@@ -38,6 +40,18 @@ var CommunityShow = React.createClass ({
       questions = [];
     }
 
+    var displayTab;
+    if (this.props.location.search == "?ask") {
+      displayTab = <NewQuestionForm />
+    } else {
+      displayTab =
+        <div className="questions-container group">
+          <ul>
+            {questions}
+          </ul>
+        </div>;
+    }
+
     return (
       <div className="content-divider group">
         <div className="main" id="content-main">
@@ -52,11 +66,7 @@ var CommunityShow = React.createClass ({
             </ul>
           </div>
 
-          <div className="questions-container group">
-            <ul>
-              {questions}
-            </ul>
-          </div>
+          {displayTab}
 
           <ul className="pagination group">
 
