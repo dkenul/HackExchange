@@ -141,8 +141,8 @@
     display: block;
     background: #e0eaf1;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    /*border: 1px solid #ccc;
+    border-radius: 5px;*/
   }
 
   .main .num-answers {

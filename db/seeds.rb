@@ -121,8 +121,10 @@ usernames = [
   "CodeNewbie",
   "SelfProclaimedExpert",
   "Breakfast",
-  "Dogs>Cats",
-
+  "CrazyCatLady",
+  "CodeWarrior",
+  "SQLNinja",
+  "PythonCharmer"
 ]
 
 comments = [

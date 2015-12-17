@@ -135,7 +135,7 @@ var NavBar = React.createClass ({
         }.bind(this));
 
         if (isMember) {
-          profileLi = <li>Profile</li>;
+          profileLi = <a href={'#/users/' + this.state.currentUser.id}>Profile</a>;
         } else {
           joinCommunityLi = (
             <li onClick={this.joinCommunity}>Join Current Community</li>

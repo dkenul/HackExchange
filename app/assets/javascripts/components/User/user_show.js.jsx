@@ -34,7 +34,10 @@ var userShow = React.createClass ({
           return (
             <div className="community-item-container" key={community.id}>
               <a href={"#/communities/" + community.id} className="community-item group">
-                <img src="http://placecorgi.com/25/25" className="community-item-thumb" />
+                <img
+                  className="community-logo"
+                  src={window.images[community.name] ? window.images[community.name] : window.images.Default}
+                />
                 <div className="text-container">
                   <div className="community-name">{community.name}</div>
                   <div className="community-description">{community.description}</div>
@@ -56,10 +59,7 @@ var userShow = React.createClass ({
 
         <div className="bottom-section">
           <ul className="bottom-section-nav group" key="b-s-n">
-            <li>Questions</li>
-            <li>Answers</li>
-            <li>Reputation</li>
-            <li>Communities</li>
+            <li>Your Communities</li>
           </ul>
 
           <div className="bottom-section-content">

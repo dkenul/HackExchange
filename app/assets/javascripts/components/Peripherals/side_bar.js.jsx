@@ -6,7 +6,7 @@ var SideBar = React.createClass ({
       <div className="meta-sidebar">
         <h2>Featured</h2>
         <div className="featured-community">
-          <h3>Chemistry</h3>
+          <h3><a href="/#/communities/8">Chemistry</a></h3>
           <p>Cool stuff about Chemistry!</p>
         </div>
         <h2>Top Users</h2>
