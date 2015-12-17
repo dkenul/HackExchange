@@ -24,7 +24,7 @@ class Question < ActiveRecord::Base
   def self.all_by_popularity
     Question
       .select('questions.*, COUNT(answers.id) as answers_count')
-      .joins(:answers)
+      .joins('left outer join answers on answers.question_id = questions.id')
       .group('questions.id')
       .order('answers_count DESC')
   end

@@ -22,7 +22,7 @@ var QuestionApiUtil = {
     });
   },
 
-  createQuestion: function(question) {
+  createQuestion: function(question, callback) {
     $.ajax({
       url: 'api/questions',
       type: 'POST',

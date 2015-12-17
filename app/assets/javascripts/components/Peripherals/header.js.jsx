@@ -34,7 +34,7 @@ var Header = React.createClass ({
         <li>Tags</li>
         <li>Users</li>
         <li>Badges</li>
-        <li>Unanswered</li>
+        <li><a href={"#/communities/" + this.state.community.id + "?unanswered"}>Unanswered</a></li>
         <li><a href={"#/communities/" + this.state.community.id + "?ask"}>Ask Question</a></li>
       </ul>;
     }

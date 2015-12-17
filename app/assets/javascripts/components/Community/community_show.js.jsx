@@ -24,6 +24,7 @@ var CommunityShow = React.createClass ({
 
   render: function() {
     var questions;
+    var unansweredQuestions = [];
     if (this.state.community && this.state.community.questions) {
       questions = this.state.community.questions.map(function(question) {
         return (
@@ -36,14 +37,41 @@ var CommunityShow = React.createClass ({
           </li>
         );
       }.bind(this));
+
+      this.state.community.questions.forEach(function(question) {
+        if (question.times_answered === 0) {
+          unansweredQuestions.push(
+            <li key={question.id} className="show group">
+              <div>
+                <h3>{question.times_answered}</h3>
+                <p>answers</p>
+              </div>
+              <a href={"#/communities/" + this.state.community.id + "/questions/" + question.id}>{question.title}</a>
+            </li>
+          );
+        }
+      }.bind(this));
     } else {
       questions = [];
     }
 
     var displayTab;
+    var topic
     if (this.props.location.search == "?ask") {
-      displayTab = <NewQuestionForm />
+      topic = <li>New Question</li>
+      displayTab = <NewQuestionForm
+        currentUser={this.props.currentUser}
+        communityId={this.state.community.id} />;
+    } else if (this.props.location.search == "?unanswered") {
+      topic = <li>Unanswered Questions</li>
+      displayTab =
+        <div className="questions-container group">
+          <ul>
+            {unansweredQuestions}
+          </ul>
+        </div>;
     } else {
+      topic = <li>Top Questions</li>
       displayTab =
         <div className="questions-container group">
           <ul>
@@ -57,7 +85,7 @@ var CommunityShow = React.createClass ({
         <div className="main" id="content-main">
           <div className="content-nav group">
             <ul className="left-nav">
-              <li>Top Questions</li>
+              {topic}
             </ul>
             <ul className="right-nav">
               <li className="clicked">Hot</li>

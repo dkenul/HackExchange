@@ -2,7 +2,8 @@ json.extract! user, :id, :username
 
 json.communities do
   json.array!(user.communities) do |community|
-    json.partial! 'api/communities/community', community: community, show_questions: false
+    json.extract! community, :id, :name, :description
+    json.membership_id Membership.having_member_id(user.id).having_community_id(community.id).first.id
   end
 end
 

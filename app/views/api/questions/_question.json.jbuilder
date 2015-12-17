@@ -8,4 +8,6 @@ show_full_data ||= false
 
 if show_full_data
   json.extract! question, :description, :author
+else
+  json.author question.author, :id, :username
 end
