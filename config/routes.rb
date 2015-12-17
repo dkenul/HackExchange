@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :create, :show]
     resource :session, only: [:create, :destroy, :show]
     resources :users, only: [:index, :create, :show]
-    resources :memberships, only: [:create, :destroy]
+    resources :memberships, only: [:show, :create, :destroy]
 
     # get '/memberships/:community_id/:user_id', to: 'memberships#show'
   end

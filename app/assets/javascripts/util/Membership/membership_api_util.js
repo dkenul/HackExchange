@@ -6,7 +6,7 @@ var MembershipApiUtil = {
       dataType: 'json',
       data: {membership: membership},
       success: function (membership) {
-        CurrentUserActions.joinCommunity(membership.community);
+        CurrentUserActions.receiveCurrentUser(membership.user);
       }
     });
   }

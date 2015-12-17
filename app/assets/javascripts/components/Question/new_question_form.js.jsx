@@ -33,6 +33,7 @@ var NewQuestionForm = React.createClass ({
       description: $(e.currentTarget).serializeJSON().description
     };
 
+
     if (this.props.currentUser.id && this.isMember()) {
       QuestionApiUtil.createQuestion(question, function(id) {
         this.history.pushState(null, '/communities/' + this.props.communityId + '/questions/' + id)

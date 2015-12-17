@@ -34,7 +34,7 @@ var CommunityShow = React.createClass ({
               <h3>{question.times_answered}</h3>
               <p>{question.times_answered === 1 ? "answer" : "answers"}</p>
             </div>
-            <a href={"#/communities/" + this.state.community.id + "/questions/" + question.id}>{question.title}</a>
+            <a href={"#/communities/" + this.props.params.community_id + "/questions/" + question.id}>{question.title}</a>
           </li>
         );
       }.bind(this));
@@ -47,7 +47,7 @@ var CommunityShow = React.createClass ({
                 <h3>{question.times_answered}</h3>
                 <p>answers</p>
               </div>
-              <a href={"#/communities/" + this.state.community.id + "/questions/" + question.id}>{question.title}</a>
+              <a href={"#/communities/" + this.props.params.community_id + "/questions/" + question.id}>{question.title}</a>
             </li>
           );
         }
@@ -64,7 +64,7 @@ var CommunityShow = React.createClass ({
               <h3>{question.times_answered}</h3>
               <p>{question.times_answered === 1 ? "answer" : "answers"}</p>
             </div>
-            <a href={"#/communities/" + this.state.community.id + "/questions/" + question.id}>{question.title}</a>
+            <a href={"#/communities/" + this.props.params.community_id + "/questions/" + question.id}>{question.title}</a>
           </li>
         );
       }.bind(this));
