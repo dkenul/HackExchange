@@ -30,10 +30,8 @@ var Header = React.createClass ({
         </p>;
 
       nav = <ul className="header-nav sub group">
-        <li><a href={"#/communities/" + this.state.community.id }>Questions</a></li>
-        <li>Tags</li>
-        <li>Users</li>
-        <li>Badges</li>
+        <li><a href={"#/communities/" + this.state.community.id }>Top Questions</a></li>
+        <li><a href={"#/communities/" + this.state.community.id + "?recent"}>Recent</a></li>
         <li><a href={"#/communities/" + this.state.community.id + "?unanswered"}>Unanswered</a></li>
         <li><a href={"#/communities/" + this.state.community.id + "?ask"}>Ask Question</a></li>
       </ul>;

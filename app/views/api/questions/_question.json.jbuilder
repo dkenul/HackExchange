@@ -1,4 +1,4 @@
-json.extract! question, :id, :title, :membership, :times_answered
+json.extract! question, :id, :title, :membership, :times_answered, :created_at
 
 json.community do
   json.extract! question.community, :id, :name

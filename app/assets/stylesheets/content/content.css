@@ -12,6 +12,10 @@
 
   /* Questions */
 
+  .content-nav {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
   .content-nav .left-nav {
     float: left;
   }
@@ -27,17 +31,26 @@
     float: right;
   }
 
-  .content-nav .right-nav > li {
+  .content-nav .right-nav > a {
     float: left;
     color: #ccc;
     font-size: 14px;
   }
 
-  .content-nav .right-nav > li:hover,
-  .content-nav .right-nav > li.clicked {
+
+  .content-nav .right-nav > a.clicked {
     color: black;
     text-shadow: 0 0 5px red;
     cursor: pointer;
+  }
+
+  .content-nav .right-nav > a:hover {
+    cursor: pointer;
+    background: none;
+  }
+
+  .content-nav .right-nav > li {
+    height: 24px;
   }
 
   .content-divider {
@@ -219,6 +232,45 @@
   }
 
   .main .answer-form .submit-answer:hover {
+    cursor: pointer;
+  }
+
+
+  /*Question Form*/
+
+  .main .question-form {
+    padding-left: 20px;
+  }
+
+  .main .question-form label {
+    display: block;
+    padding-top: 20px;
+  }
+
+  .main .question-form label h3 {
+    padding-bottom: 20px;
+  }
+
+  .main .question-form textarea {
+    display: block;
+    width: 600px;
+    height: 300px;
+  }
+
+  .main .question-form .submit-question {
+    display:block;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background: #da7968;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: 0;
+    height: 40px;
+    width: 100px;
+  }
+
+  .main .question-form .submit-question:hover {
     cursor: pointer;
   }
 
@@ -452,9 +504,9 @@
     color: #66b2ff;
   }
 
-  .questions-container > ul > li:first-child {
+  /*.questions-container > ul > li:first-child {
     border-top: 1px solid #e0e0e0;
-  }
+  }*/
 
   .questions-container > ul > li.show > div {
     color: #000;

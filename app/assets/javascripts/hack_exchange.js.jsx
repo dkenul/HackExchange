@@ -8,8 +8,9 @@ $(function(){
     mixins: [ReactRouter.History],
 
     getInitialState: function() {
+      var currentCommunity = this.props.params.community_id ? this.props.params.community_id : "meta";
       return {
-        currentCommunity: "meta",
+        currentCommunity: currentCommunity,
         currentUser: CurrentUserStore.currentUser(),
         navReset: false
       };

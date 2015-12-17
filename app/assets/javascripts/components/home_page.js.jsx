@@ -35,8 +35,7 @@ var HomePage = React.createClass ({
         <div className="main" id="content-main">
           <div className="content-nav group">
             <ul className="right-nav">
-              <li className="clicked">Hot</li>
-              <li>Live</li>
+              <li></li>
             </ul>
           </div>
           <QuestionIndex />

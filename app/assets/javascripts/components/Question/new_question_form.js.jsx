@@ -60,7 +60,7 @@ var NewQuestionForm = React.createClass ({
         </label>
 
         <div>
-          <button className="submit-question">Post Question</button>
+          <button className="submit-question">Post</button>
         </div>
       </form>;
     } else if (this.props.currentUser.id) {
