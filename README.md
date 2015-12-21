@@ -26,8 +26,6 @@ and React.js.
 - [ ] User Profile & Reputation 
 - [ ] Search Bar
 - [ ] Error Messages
-- 
-
 
 ## Stretch Goals
 
